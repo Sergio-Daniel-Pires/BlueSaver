@@ -1,8 +1,18 @@
 # BlueSaver
-Projeto de MC426.
-salve.
+Projeto de MC426.  
+Desenvolvido em Flask com apresentação das funcionalidades em um Swagger.
 
-The main objective of this project is to raise awareness of people about the use of water, and how dangerously low the availability of drinking water is becoming.
+## Para rodar o servidor FLASK, pode utilizar:
+### 1 - Bash com seleção:
+```bash
+bash run.sh
+```
+### 2 - Flask run:
+```bash
+python3 -m flask --app app run --debug
+```
 
-Do. Or do not. There is no try.
-There was a rock in the middle of the road.
+## Para visualizar as rotas, acesse:
+```
+localhost:5000
+```
