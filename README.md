@@ -3,11 +3,13 @@ Projeto de MC426.
 Desenvolvido em Flask com apresentação das funcionalidades em um Swagger.
 
 ## Para rodar o servidor FLASK, pode utilizar:
-### 1 - Bash com seleção:
+### I - Bash com seleção:
 ```bash
 bash run.sh
 ```
-### 2 - Flask run:
+### OU
+
+### II - Flask run:
 ```bash
 python3 -m flask --app app run --debug
 ```
