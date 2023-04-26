@@ -1,5 +1,10 @@
 from flask_restx import Namespace, Resource
 from flask import request
+from flask import Response
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import numpy as np
+import io
 
 from . import grafico_options
 
@@ -18,5 +23,13 @@ class GraficosVer(Resource):
         idade = formulario.get('Idade', None)
         if idade is None:
             return "Idade não pode ser vazia!", 400
-
-        return f"Sem graficos definidos ainda, mas sua idade é {idade}!", 200
+        
+        fig = Figure()
+        axis = fig.add_subplot(1, 1, 1)
+        xs = np.random.rand(100)
+        ys = np.random.rand(100)
+        axis.plot(xs, ys)
+        output = io.BytesIO()
+        FigureCanvas(fig).print_png(output)
+        return Response(output.getvalue(), mimetype='image/png')
+        #return f"Sem graficos definidos ainda, mas sua idade é {idade}!", 200
