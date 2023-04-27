@@ -24,6 +24,16 @@ class GraficosVer(Resource):
         if idade is None:
             return "Idade não pode ser vazia!", 400
         
+        if idade == "Até 8 anos!":
+
+            return "A idade é até 8 anos"
+        elif idade == "Entre 9 e 15!":
+            
+            return "A idade é entre 9 e 15 anos"
+        elif idade == "16 ou mais!":
+            
+            return "A idade é 16 ou mais!"
+        
         fig = Figure()
         axis = fig.add_subplot(1, 1, 1)
         xs = np.random.rand(100)
