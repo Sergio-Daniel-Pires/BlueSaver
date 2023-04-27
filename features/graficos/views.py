@@ -25,8 +25,15 @@ class GraficosVer(Resource):
             return "Idade não pode ser vazia!", 400
         
         if idade == "Até 8 anos!":
-
-            return "A idade é até 8 anos"
+            fig = Figure()
+            axis = fig.add_subplot(1, 1, 1)
+            xs = np.random.rand(100)
+            ys = np.random.rand(100)
+            axis.plot(xs, ys)
+            output = io.BytesIO()
+            FigureCanvas(fig).print_png(output)
+            return Response(output.getvalue(), mimetype='image/png')
+            #return "A idade é até 8 anos"
         elif idade == "Entre 9 e 15!":
             
             return "A idade é entre 9 e 15 anos"
@@ -34,12 +41,6 @@ class GraficosVer(Resource):
             
             return "A idade é 16 ou mais!"
         
-        fig = Figure()
-        axis = fig.add_subplot(1, 1, 1)
-        xs = np.random.rand(100)
-        ys = np.random.rand(100)
-        axis.plot(xs, ys)
-        output = io.BytesIO()
-        FigureCanvas(fig).print_png(output)
-        return Response(output.getvalue(), mimetype='image/png')
+
+
         #return f"Sem graficos definidos ainda, mas sua idade é {idade}!", 200
