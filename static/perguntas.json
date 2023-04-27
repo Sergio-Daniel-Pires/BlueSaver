@@ -31,7 +31,7 @@
     },
 
     "Médio":{
-        "1": {
+        "q1": {
             "Pergunta": "M:Qual a formula da agua?",
             "Opcoes": {
                 "a": "H2O",
@@ -40,7 +40,7 @@
             },
             "Correta": "a"
         },
-        "2": {
+        "q2": {
             "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
             "Opcoes": {
                 "a": "3%",
@@ -49,7 +49,7 @@
             },
             "Correta": "c"
         },
-        "3": {
+        "q3": {
             "Pergunta": "Qual a área fonte da maior parte do gasto de água potável do mundo?",
             "Opcoes": {
                 "a": "Indústria",
@@ -62,7 +62,7 @@
     },
     
     "Difícil":{
-        "1": {
+        "q1": {
             "Pergunta": "D:Qual a formula da agua?",
             "Opcoes": {
                 "a": "H2O",
@@ -71,7 +71,7 @@
             },
             "Correta": "a"
         },
-        "2": {
+        "q2": {
             "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
             "Opcoes": {
                 "a": "3%",
@@ -80,7 +80,7 @@
             },  
             "Correta": "c"
         },
-        "3": {
+        "q3": {
             "Pergunta": "Qual a área fonte da maior parte do gasto de água potável do mundo?",
             "Opcoes": {
                 "a": "Indústria",
