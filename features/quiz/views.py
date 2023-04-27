@@ -1,9 +1,8 @@
 from flask_restx import Namespace, Resource
-from flask import request
-import json 
-import app
-import os
+from flask import request, current_app
 from . import quiz_gerar, quiz_responder
+
+from .funcoes import *
 
 quiz_ns = Namespace("Quiz da Água", description="Sabe bastante sobre o uso da água no mundo? Teste seu conhecimento aqui!")
 
@@ -16,27 +15,14 @@ class GerarQuiz(Resource):
         
         Essa função deve retornar as perguntas do quiz no formato JSON.
         """
-        def escolhi_perguntas(dificuldade):
-            
-
-            print(f"Seu quiz tem dificuldade {dificuldade}")
-
-            json_string = open(os.path.join(app.config['STATIC'],'perguntas.json'), "r") 
-            perguntas=json.loads(json_string)
-
-            for numquestao in perguntas[dificuldade] :
-                print(perguntas[dificuldade][numquestao]['Pergunta'])
-
-                for alternativa in perguntas[dificuldade][numquestao]['Opcoes'] :
-                    print(alternativa,") ",perguntas[dificuldade][numquestao]['Opcoes'][alternativa])
-
         formulario = dict(request.form)
         dificuldade = formulario.get('Dificuldade', None)
         if dificuldade is None:
             return "Dificuldade não pode ser vazia!", 400
 
         #return f"Seu quiz tem dificuldade {dificuldade}", 200
-        return escolhi_perguntas(dificuldade), 200
+        STATIC = current_app.config['STATIC']
+        return escolher_perguntas(dificuldade, STATIC), 200
 
 @quiz_ns.route('/responder')
 class ResponderQuiz(Resource):
