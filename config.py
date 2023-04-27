@@ -3,7 +3,10 @@ from pathlib import Path
 
 class BaseConfig():
     """Configuracao basica BlueSaver API"""
-    BASE_DIR = Path(__file__).parent
+    BASE_DIR = Path(__file__)
+    STATIC = os.path.join(BASE_DIR, 'STATICS')
+
+
 
 class DevelopConfig(BaseConfig):
     DEBUG = True
