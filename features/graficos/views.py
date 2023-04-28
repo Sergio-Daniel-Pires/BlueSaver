@@ -3,6 +3,9 @@ from flask import request
 from flask import Response
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+import plotly.express as px
+import plotly
+import pandas as pd
 import numpy as np
 import io
 
@@ -24,7 +27,9 @@ class GraficosVer(Resource):
         if idade is None:
             return "Idade não pode ser vazia!", 400
         
+
         if idade == "Até 8 anos!":
+            '''
             fig = Figure()
             axis = fig.add_subplot(1, 1, 1)
             xs = np.random.rand(100)
@@ -33,6 +38,11 @@ class GraficosVer(Resource):
             output = io.BytesIO()
             FigureCanvas(fig).print_png(output)
             return Response(output.getvalue(), mimetype='image/png')
+            '''
+
+            df_uso_agua = pd.read_csv("../../static/global-freshwater-use-over-the-long-run.csv", sep = ",")
+            fig = px.bar(df_uso_agua, x="Year", y="Freshwater use")
+            return plotly.io.to_html(fig)
             #return "A idade é até 8 anos"
         elif idade == "Entre 9 e 15!":
             
