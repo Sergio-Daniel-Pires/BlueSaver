@@ -41,4 +41,5 @@ class ResponderQuiz(Resource):
         if None in respostas:
             return f"Resposta {respostas.index(None)} não pode ser vazia!"
 
-        return f"Suas respostas para o quiz {dificuldade} foram: {respostas}", 200
+        STATIC = current_app.config['STATIC']
+        return verifica_resposta(dificuldade, respostas, STATIC), 200
