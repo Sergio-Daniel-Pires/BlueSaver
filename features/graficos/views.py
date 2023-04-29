@@ -1,5 +1,6 @@
 from flask_restx import Namespace, Resource
 from flask import request
+from flask import Flask, render_template
 from flask import Response
 from matplotlib.figure import Figure
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
@@ -7,6 +8,7 @@ import plotly.express as px
 import plotly
 import pandas as pd
 import numpy as np
+import json
 import io
 
 from . import grafico_options
@@ -29,24 +31,25 @@ class GraficosVer(Resource):
         
 
         if idade == "Até 8 anos!":
-            '''
-            fig = Figure()
-            axis = fig.add_subplot(1, 1, 1)
-            xs = np.random.rand(100)
-            ys = np.random.rand(100)
-            axis.plot(xs, ys)
-            output = io.BytesIO()
-            FigureCanvas(fig).print_png(output)
-            return Response(output.getvalue(), mimetype='image/png')
-            '''
-
-            df_uso_agua = pd.read_csv("../../static/global-freshwater-use-over-the-long-run.csv", sep = ",")
-            fig = px.bar(df_uso_agua, x="Year", y="Freshwater use")
-            return plotly.io.to_html(fig)
-            #return "A idade é até 8 anos"
+            path_df = "static/industrial-water-withdrawal.csv"
+            df_uso_agua = pd.read_csv(path_df, sep = ",")
+            t = pd.DataFrame(df_uso_agua.groupby(by="Entity")["Industrial water withdrawal"].sum().reset_index())
+            t = t.sort_values(by=t.columns[1], ascending=False).head(10)
+            fig = px.pie(t, names="Entity", values="Industrial water withdrawal", title="Retirada de água para indústria por país")
+            fig.write_image("static/fig2.png", "png")
+            img = open("static/fig2.png", "rb")
+            return Response(img, mimetype="image/png")
+        
         elif idade == "Entre 9 e 15!":
-            
-            return "A idade é entre 9 e 15 anos"
+        
+            path_df = "static/global-freshwater-use-over-the-long-run.csv"
+            df_uso_agua = pd.read_csv(path_df, sep = ",")
+            df_uso_agua = df_uso_agua[df_uso_agua["Year"] <= 2010]
+            fig = px.bar(df_uso_agua, x="Year", y="Freshwater use", title="Uso de água ao longo do tempo")
+            fig.write_image("static/fig1.png", "png")
+            img = open("static/fig1.png", "rb")
+            return Response(img, mimetype="image/png")
+
         elif idade == "16 ou mais!":
             
             return "A idade é 16 ou mais!"
