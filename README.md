@@ -9,7 +9,7 @@ bash run.sh
 ```
 ### 2 - Flask run:
 ```bash
-python3 -m flask --app app run --debug
+python3 -m flask --app app run
 ```
 
 ## Para visualizar as rotas, acesse:
