@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_restx import Api
 from .config import config
-
 import os
 
 api = Api(
