@@ -67,6 +67,16 @@
             },
             "Correta": "b"
         }
+        ,
+        "q4": {
+            "Pergunta": "O uso de água potável está estável, aumentando ou diminuindo com o tempo?",
+            "Opcoes": {
+                "a": "Diminuindo",
+                "b": "Estável",
+                "c": "Aumentando"
+            },
+            "Correta": "c"
+        }
         
     },
     
