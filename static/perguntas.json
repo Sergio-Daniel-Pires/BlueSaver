@@ -26,6 +26,15 @@
                 "c": "Doméstico e comercial"
             },
             "Correta": "b"
+        },
+        "q4": {
+            "Pergunta": "Qual o país que mais retira água para uso industrial do mundo?",
+            "Opcoes": {
+                "a": "China",
+                "b": "Índia",
+                "c": "EUA"
+            },
+            "Correta": "c"
         }
         
     },
