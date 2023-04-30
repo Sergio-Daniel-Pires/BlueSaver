@@ -107,6 +107,15 @@
                 "c": "Doméstico e comercial"
             },
             "Correta": "b"
+        },
+        "q4": {
+            "Pergunta": "Qual a região que mais usa água potável per capita?",
+            "Opcoes": {
+                "a": "América do Norte",
+                "b": "América do Sul",
+                "c": "Europa"
+            },
+            "Correta": "b"
         }
         
     }
