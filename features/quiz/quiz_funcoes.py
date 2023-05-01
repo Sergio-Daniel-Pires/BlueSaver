@@ -9,9 +9,7 @@ def escolher_perguntas(dificuldade: str, arquivos_estaticos: str) -> dict:
     #print(f"Seu quiz tem dificuldade {dificuldade}")
 
     with open(os.path.join(arquivos_estaticos, 'perguntas.json'), "r") as perguntas_json:
-        perguntas = json.loads(perguntas_json.read())
-
-   
+        perguntas = json.loads(perguntas_json.read())   
 
     #linhas = []
     nivel=perguntas[dificuldade]
@@ -38,8 +36,3 @@ def verifica_resposta(dificuldade: str, respostas: list, arquivos_estaticos: str
             new_dict.update({f"Resposta correta questão {idx+1}":nivel[questao]['Correta']})
 
     return new_dict
-
-
-
-
-
