@@ -20,9 +20,8 @@ class GerarQuiz(Resource):
         if dificuldade is None:
             return "Dificuldade não pode ser vazia!", 400
 
-        #return f"Seu quiz tem dificuldade {dificuldade}", 200
         STATIC = current_app.config['STATIC']
-        return escolher_perguntas(dificuldade, STATIC), 200
+        return escolher_perguntas(dificuldade, STATIC)
 
 @quiz_ns.route('/responder')
 class ResponderQuiz(Resource):
