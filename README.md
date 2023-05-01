@@ -23,3 +23,6 @@ python3 -m flask --app app run --debug
 ```
 localhost:5000
 ```
+
+> Hannah Ritchie and Max Roser (2017) - "Water Use and Stress". Published online at OurWorldInData.org. Retrieved from: 'https://ourworldindata.org/water-use-stress' [Online Resource]
+

@@ -1,0 +1,641 @@
+Entity,Code,Year,Total water withdrawal per capita
+Afghanistan,AFG,1975,819.5
+Afghanistan,AFG,1985,2303
+Afghanistan,AFG,2000,943.8
+Albania,ALB,1990,370.3
+Albania,ALB,2000,588.5
+Albania,ALB,2005,435.4
+Algeria,DZA,1970,130.1
+Algeria,DZA,1975,141.3
+Algeria,DZA,1980,145.8
+Algeria,DZA,1985,146.3
+Algeria,DZA,1990,165.6
+Algeria,DZA,2000,178.9
+Algeria,DZA,2010,225
+Angola,AGO,1985,46.67
+Angola,AGO,2000,39.76
+Angola,AGO,2005,36.79
+Antigua and Barbuda,ATG,1990,78.83
+Antigua and Barbuda,ATG,2005,99.53
+Antigua and Barbuda,ATG,2010,129.1
+Argentina,ARG,1975,1027
+Argentina,ARG,1995,797.6
+Argentina,ARG,2010,897.5
+Armenia,ARM,1995,932.1
+Armenia,ARM,2000,568.8
+Armenia,ARM,2005,956.5
+Armenia,ARM,2010,987.6
+Armenia,ARM,2015,1084
+Australia,AUS,1995,1199
+Australia,AUS,2000,1112
+Australia,AUS,2005,894.4
+Australia,AUS,2010,699.2
+Australia,AUS,2015,724.7
+Austria,AUT,1980,440.4
+Austria,AUT,1985,469.6
+Austria,AUT,1990,487.3
+Austria,AUT,1995,454.6
+Austria,AUT,2000,452
+Austria,AUT,2010,413
+Azerbaijan,AZE,1995,1579
+Azerbaijan,AZE,2000,1216
+Azerbaijan,AZE,2005,1393
+Azerbaijan,AZE,2010,1279
+Bahrain,BHR,1990,457.2
+Bahrain,BHR,2005,348
+Bangladesh,BGD,2010,231
+Barbados,BRB,1960,129
+Barbados,BRB,1995,303.5
+Barbados,BRB,2005,293.3
+Belarus,BLR,1995,196.2
+Belarus,BLR,2000,187
+Belarus,BLR,2005,178.5
+Belarus,BLR,2010,163.1
+Belarus,BLR,2015,159.4
+Belgium,BEL,1980,919.5
+Belgium,BEL,1995,754.4
+Belgium,BEL,2000,650.1
+Belgium,BEL,2005,580.8
+Belgium,BEL,2010,542
+Belize,BLZ,1985,114.7
+Belize,BLZ,2000,385.2
+Benin,BEN,1985,24.2
+Benin,BEN,2000,17.53
+Bhutan,BTN,2010,454.5
+Bolivia,BOL,1985,191.8
+Bolivia,BOL,2010,203.9
+Bosnia and Herzegovina,BIH,2005,87.01
+Bosnia and Herzegovina,BIH,2010,85.95
+Bosnia and Herzegovina,BIH,2015,86.06
+Botswana,BWA,1985,71.37
+Botswana,BWA,1990,77.4
+Botswana,BWA,1995,87.12
+Botswana,BWA,2000,108.6
+Brazil,BRA,1985,246
+Brazil,BRA,1995,326.8
+Brazil,BRA,2005,301.2
+Brazil,BRA,2010,369.7
+Brunei,BRN,1990,279.4
+Brunei,BRN,1995,297
+Bulgaria,BGR,1980,1590
+Bulgaria,BGR,1985,1575
+Bulgaria,BGR,1990,866
+Bulgaria,BGR,2000,837.3
+Bulgaria,BGR,2005,819.5
+Bulgaria,BGR,2010,782.4
+Bulgaria,BGR,2015,787.3
+Burkina Faso,BFA,1985,35.63
+Burkina Faso,BFA,1990,40.44
+Burkina Faso,BFA,2000,58.23
+Burkina Faso,BFA,2005,57.35
+Burundi,BDI,1985,19.57
+Burundi,BDI,2000,40.22
+Cambodia,KHM,2005,159.1
+Cameroon,CMR,1985,35.9
+Cameroon,CMR,1990,31.26
+Cameroon,CMR,2000,57.6
+Canada,CAN,1985,1590
+Canada,CAN,1990,1590
+Canada,CAN,1995,1413
+Canada,CAN,2005,1253
+Canada,CAN,2010,1113
+Cape Verde,CPV,1990,71.62
+Cape Verde,CPV,2000,48.31
+Central African Republic,CAF,1985,7.052
+Central African Republic,CAF,2000,17.15
+Central African Republic,CAF,2005,17.25
+Chad,TCD,1985,33.46
+Chad,TCD,2000,94.33
+Chad,TCD,2005,81.6
+Chile,CHL,1990,1496
+Chile,CHL,2005,2152
+China,CHN,1980,431.1
+China,CHN,1985,430.2
+China,CHN,1990,411.4
+China,CHN,1995,411.9
+China,CHN,2000,418.4
+China,CHN,2005,423.2
+China,CHN,2010,435.2
+China,CHN,2015,425
+Colombia,COL,2000,186.3
+Colombia,COL,2010,251.1
+Comoros,COM,2000,17.38
+Congo,COG,1985,18.17
+Congo,COG,2000,14.12
+Costa Rica,CRI,2015,488.8
+Cote d'Ivoire,CIV,1985,64.81
+Cote d'Ivoire,CIV,1990,84.31
+Cote d'Ivoire,CIV,1995,80.54
+Cote d'Ivoire,CIV,2000,81.99
+Cote d'Ivoire,CIV,2005,82.12
+Croatia,HRV,2010,156.1
+Croatia,HRV,2015,149.5
+Cuba,CUB,1995,473.7
+Cuba,CUB,2005,437.5
+Cuba,CUB,2015,611
+Cyprus,CYP,1975,232.9
+Cyprus,CYP,1980,255.9
+Cyprus,CYP,1985,276.5
+Cyprus,CYP,1990,282.3
+Cyprus,CYP,1995,236.9
+Cyprus,CYP,2000,214.5
+Cyprus,CYP,2005,203.8
+Cyprus,CYP,2010,226.6
+Cyprus,CYP,2015,219.1
+Czechia,CZE,1995,241.7
+Czechia,CZE,2000,186.6
+Czechia,CZE,2005,190.6
+Czechia,CZE,2010,174.6
+Czechia,CZE,2015,156.5
+Democratic Republic of Congo,COD,2000,11.46
+Democratic Republic of Congo,COD,2005,11.42
+Denmark,DNK,1970,144.3
+Denmark,DNK,1975,236.5
+Denmark,DNK,1980,235.2
+Denmark,DNK,1985,333.3
+Denmark,DNK,1990,243.9
+Denmark,DNK,1995,176.7
+Denmark,DNK,2000,124.4
+Denmark,DNK,2005,104.4
+Denmark,DNK,2010,116.4
+Djibouti,DJI,1985,16.47
+Djibouti,DJI,2000,25.49
+Dominica,DMA,1995,234.6
+Dominica,DMA,2000,237.8
+Dominica,DMA,2005,234.5
+Dominica,DMA,2010,279
+Dominican Republic,DOM,2000,550.8
+Dominican Republic,DOM,2005,575.5
+Dominican Republic,DOM,2010,704.7
+Ecuador,ECU,2000,716.7
+Ecuador,ECU,2005,698.2
+Egypt,EGY,1975,1194
+Egypt,EGY,1995,909.1
+Egypt,EGY,2000,963.2
+Egypt,EGY,2010,910.6
+El Salvador,SLV,1990,135.2
+El Salvador,SLV,2000,234.3
+El Salvador,SLV,2005,353.8
+Equatorial Guinea,GNQ,1985,29.13
+Equatorial Guinea,GNQ,2000,30.65
+Eritrea,ERI,2000,109.1
+Eritrea,ERI,2005,132.1
+Estonia,EST,1990,1729
+Estonia,EST,1995,963.1
+Estonia,EST,2000,1022
+Estonia,EST,2005,1365
+Estonia,EST,2010,1232
+Estonia,EST,2015,1310
+Eswatini,SWZ,1980,1028
+Eswatini,SWZ,2000,963
+Ethiopia,ETH,2000,78.96
+Ethiopia,ETH,2005,97.18
+Ethiopia,ETH,2015,106.1
+Fiji,FJI,1985,41.57
+Fiji,FJI,2000,100.2
+Fiji,FJI,2005,101.7
+Finland,FIN,1970,710.4
+Finland,FIN,1975,749.1
+Finland,FIN,1980,766.7
+Finland,FIN,1985,810.2
+Finland,FIN,1990,466.1
+Finland,FIN,1995,503
+Finland,FIN,2000,447.6
+Finland,FIN,2005,1241
+France,FRA,1980,568
+France,FRA,1985,623
+France,FRA,1990,682.1
+France,FRA,1995,517.3
+France,FRA,2000,538.8
+France,FRA,2005,506.9
+France,FRA,2010,475.6
+Gabon,GAB,1985,68.42
+Gabon,GAB,2000,93.33
+Gabon,GAB,2005,96.53
+Gambia,GMB,1980,30.85
+Gambia,GMB,2000,69.19
+Georgia,GEO,2005,413.4
+Georgia,GEO,2010,440.4
+Germany,DEU,1990,577.8
+Germany,DEU,1995,551.3
+Germany,DEU,2000,479.2
+Germany,DEU,2005,399.5
+Germany,DEU,2010,410.5
+Ghana,GHA,1970,33.03
+Ghana,GHA,2000,49.63
+Greece,GRC,1970,480.4
+Greece,GRC,1975,462
+Greece,GRC,1980,515.8
+Greece,GRC,1985,550.7
+Greece,GRC,1990,778.8
+Greece,GRC,1995,805.2
+Greece,GRC,2000,840.9
+Greece,GRC,2005,865.2
+Grenada,GRD,2005,96.53
+Grenada,GRD,2015,132
+Guatemala,GTM,2005,240.9
+Guinea,GIN,1985,137.7
+Guinea,GIN,2000,60.71
+Guinea-Bissau,GNB,1990,15.02
+Guinea-Bissau,GNB,1995,141.8
+Guinea-Bissau,GNB,2000,127.6
+Guyana,GUY,1990,2035
+Guyana,GUY,2000,2207
+Guyana,GUY,2010,1905
+Haiti,HTI,1990,132.7
+Haiti,HTI,1995,158.4
+Haiti,HTI,2010,140.9
+Honduras,HND,2005,225.3
+Hungary,HUN,1970,286.1
+Hungary,HUN,1975,372.3
+Hungary,HUN,1980,448.2
+Hungary,HUN,1985,605.9
+Hungary,HUN,1990,688.6
+Hungary,HUN,1995,582.9
+Hungary,HUN,2000,562.5
+Hungary,HUN,2005,554.8
+Hungary,HUN,2010,507.2
+Iceland,ISL,1980,463.3
+Iceland,ISL,1985,453.6
+Iceland,ISL,1990,642.6
+Iceland,ISL,2000,575.1
+Iceland,ISL,2005,540.3
+Iceland,ISL,2010,11042
+Iceland,ISL,2015,844.9
+India,IND,1975,583.8
+India,IND,1980,600.2
+India,IND,1985,608.6
+India,IND,1990,551.6
+India,IND,2000,559.9
+India,IND,2010,602.3
+Indonesia,IDN,1990,395.9
+Indonesia,IDN,2000,521.2
+Iran,IRN,1975,1293
+Iran,IRN,1995,1330
+Iran,IRN,2000,1325
+Iran,IRN,2005,1301
+Iraq,IRQ,1975,3255
+Iraq,IRQ,1980,2826
+Iraq,IRQ,1985,2517
+Iraq,IRQ,1990,2317
+Iraq,IRQ,1995,2528
+Iraq,IRQ,2000,2646
+Ireland,IRL,1980,305.6
+Ireland,IRL,1995,317.3
+Ireland,IRL,2005,166.3
+Ireland,IRL,2010,162.2
+Israel,ISR,1970,515.5
+Israel,ISR,1975,464.4
+Israel,ISR,1980,437.7
+Israel,ISR,1985,450.7
+Israel,ISR,1990,375.3
+Israel,ISR,1995,321.8
+Israel,ISR,2000,293.4
+Israel,ISR,2005,282.3
+Italy,ITA,1970,766.7
+Italy,ITA,2000,787.6
+Italy,ITA,2010,899.8
+Jamaica,JAM,1995,366.1
+Jamaica,JAM,2005,300.2
+Japan,JPN,1980,749.3
+Japan,JPN,1990,742
+Japan,JPN,1995,713.6
+Japan,JPN,2000,670.5
+Japan,JPN,2005,652.1
+Japan,JPN,2010,640.6
+Jordan,JOR,1975,215.6
+Jordan,JOR,1980,217.2
+Jordan,JOR,1985,207.6
+Jordan,JOR,1990,262.8
+Jordan,JOR,2000,162.6
+Jordan,JOR,2005,161.8
+Jordan,JOR,2010,121.4
+Jordan,JOR,2015,145.4
+Kazakhstan,KAZ,1995,2177
+Kazakhstan,KAZ,2000,1312
+Kazakhstan,KAZ,2005,1315
+Kazakhstan,KAZ,2010,1257
+Kenya,KEN,1990,81.86
+Kenya,KEN,2005,62.28
+Kenya,KEN,2010,75.64
+Kuwait,KWT,1995,319.1
+Kuwait,KWT,2000,447.2
+Kyrgyzstan,KGZ,1995,2131
+Kyrgyzstan,KGZ,2000,2005
+Kyrgyzstan,KGZ,2005,1531
+Laos,LAO,2005,588
+Latvia,LVA,1995,171.7
+Latvia,LVA,2000,110.6
+Latvia,LVA,2005,100.5
+Latvia,LVA,2010,127.7
+Latvia,LVA,2015,125.8
+Lebanon,LBN,1975,288.2
+Lebanon,LBN,1995,418
+Lebanon,LBN,2000,406.8
+Lebanon,LBN,2005,320.7
+Lesotho,LSO,1985,32.89
+Lesotho,LSO,2000,23.24
+Liberia,LBR,1985,59.2
+Liberia,LBR,2000,42.59
+Libya,LBY,1975,422.5
+Libya,LBY,1980,426.1
+Libya,LBY,1985,764
+Libya,LBY,1990,1035
+Libya,LBY,1995,908.7
+Libya,LBY,2000,784
+Libya,LBY,2005,809.1
+Libya,LBY,2010,927.9
+Lithuania,LTU,1995,1218
+Lithuania,LTU,2000,806.3
+Lithuania,LTU,2005,695.2
+Lithuania,LTU,2010,209.4
+Luxembourg,LUX,1970,84.92
+Luxembourg,LUX,1975,102.6
+Luxembourg,LUX,1980,95.2
+Luxembourg,LUX,1985,159.9
+Luxembourg,LUX,1995,130.5
+Luxembourg,LUX,2000,136.4
+Luxembourg,LUX,2010,83.57
+Luxembourg,LUX,2015,76
+Madagascar,MDG,1985,1543
+Madagascar,MDG,2000,798.9
+Madagascar,MDG,2005,700
+Malawi,MWI,1995,91.23
+Malawi,MWI,2000,112.4
+Malawi,MWI,2005,100.5
+Malaysia,MYS,1990,526.9
+Malaysia,MYS,1995,251.7
+Malaysia,MYS,2000,381.3
+Malaysia,MYS,2005,419
+Maldives,MDV,1985,16.74
+Maldives,MDV,2010,17.11
+Mali,MLI,1985,168.5
+Mali,MLI,2005,376.9
+Malta,MLT,1980,61.16
+Malta,MLT,1995,147.8
+Malta,MLT,2000,137.5
+Malta,MLT,2005,138.2
+Malta,MLT,2010,96.01
+Malta,MLT,2015,108.2
+Mauritania,MRT,1980,449.5
+Mauritania,MRT,2000,554.9
+Mauritania,MRT,2005,405.6
+Mauritius,MUS,1975,390.3
+Mauritius,MUS,1990,522.6
+Mauritius,MUS,1995,532.9
+Mauritius,MUS,2000,507.5
+Mauritius,MUS,2005,588
+Mexico,MEX,1980,771.9
+Mexico,MEX,2000,687.6
+Mexico,MEX,2005,697.8
+Mexico,MEX,2010,677.7
+Mexico,MEX,2015,674.4
+Moldova,MDA,1990,448.7
+Moldova,MDA,2005,258
+Monaco,MCO,1990,224.4
+Monaco,MCO,1995,192.1
+Monaco,MCO,2000,177.6
+Monaco,MCO,2005,156.9
+Monaco,MCO,2010,133.7
+Mongolia,MNG,1995,183.2
+Mongolia,MNG,2005,208.3
+Mongolia,MNG,2010,196.2
+Montenegro,MNE,2010,257.9
+Morocco,MAR,1975,481.6
+Morocco,MAR,1980,477
+Morocco,MAR,1985,466.9
+Morocco,MAR,1990,426.8
+Morocco,MAR,1995,403.1
+Morocco,MAR,2000,501.8
+Morocco,MAR,2010,316.2
+Mozambique,MOZ,1990,42.59
+Mozambique,MOZ,2000,45.7
+Mozambique,MOZ,2015,52.65
+Myanmar,MMR,1985,706.4
+Myanmar,MMR,2000,682.5
+Namibia,NAM,1985,112.3
+Namibia,NAM,1990,164.5
+Namibia,NAM,1995,155.3
+Namibia,NAM,2000,147.1
+Nepal,NPL,2000,390
+Nepal,NPL,2005,364.4
+Netherlands,NLD,1980,645.2
+Netherlands,NLD,1985,638.8
+Netherlands,NLD,1990,527.7
+Netherlands,NLD,1995,416.2
+Netherlands,NLD,2000,554.5
+Netherlands,NLD,2005,665.1
+Netherlands,NLD,2010,640
+New Zealand,NZL,1980,376.3
+New Zealand,NZL,1985,574
+New Zealand,NZL,2000,792.5
+New Zealand,NZL,2005,1158
+New Zealand,NZL,2010,1172
+Nicaragua,NIC,2000,268.4
+Nicaragua,NIC,2010,262.9
+Niger,NER,1990,59.23
+Niger,NER,2005,67.7
+Nigeria,NGA,1985,63.23
+Nigeria,NGA,2000,79.77
+Nigeria,NGA,2005,78.63
+Nigeria,NGA,2010,74.12
+North Korea,PRK,2005,359.1
+North Macedonia,MKD,1995,789.7
+North Macedonia,MKD,2000,312.1
+North Macedonia,MKD,2005,268.7
+Norway,NOR,1980,486.9
+Norway,NOR,1995,548.4
+Norway,NOR,2000,528.8
+Norway,NOR,2005,641.5
+Oman,OMN,1990,617.7
+Oman,OMN,2000,585.4
+Oman,OMN,2005,509.3
+Pakistan,PAK,1975,2162
+Pakistan,PAK,1990,1370
+Pakistan,PAK,2000,1196
+Pakistan,PAK,2010,1034
+Palestine,PSE,2000,82.52
+Palestine,PSE,2005,111.3
+Panama,PAN,2010,277
+Papua New Guinea,PNG,2000,48.01
+Papua New Guinea,PNG,2005,61.39
+Paraguay,PRY,1985,110.7
+Paraguay,PRY,2000,88.95
+Paraguay,PRY,2010,378.3
+Peru,PER,2010,452.9
+Philippines,PHL,2005,886.9
+Philippines,PHL,2010,849.4
+Poland,POL,1970,303.3
+Poland,POL,1975,389
+Poland,POL,1980,414.3
+Poland,POL,1985,433.4
+Poland,POL,1990,348.7
+Poland,POL,1995,331.8
+Poland,POL,2000,305
+Poland,POL,2005,312.5
+Poland,POL,2010,297.3
+Portugal,PRT,1990,864.9
+Portugal,PRT,2000,1075
+Portugal,PRT,2005,867.3
+Puerto Rico,PRI,1990,1174
+Puerto Rico,PRI,2000,1023
+Puerto Rico,PRI,2005,1113
+Puerto Rico,PRI,2010,1124
+Qatar,QAT,1975,822.4
+Qatar,QAT,1995,539.4
+Qatar,QAT,2000,463.3
+Qatar,QAT,2005,376.6
+Romania,ROU,1970,456.4
+Romania,ROU,1975,652.1
+Romania,ROU,1980,823
+Romania,ROU,1985,879.4
+Romania,ROU,1990,873.2
+Romania,ROU,1995,550.5
+Romania,ROU,2000,422
+Romania,ROU,2005,328.1
+Romania,ROU,2010,325
+Romania,ROU,2015,328.9
+Russia,RUS,1995,521.7
+Russia,RUS,2000,455.9
+Russia,RUS,2015,425.2
+Rwanda,RWA,2000,17.57
+Saint Kitts and Nevis,KNA,2010,290.8
+Saint Lucia,LCA,2005,252.1
+Saint Vincent and the Grenadines,VCT,1995,92.59
+Saint Vincent and the Grenadines,VCT,2015,77.63
+Sao Tome and Principe,STP,1995,53.8
+Saudi Arabia,SAU,1990,978.2
+Saudi Arabia,SAU,2005,907.5
+Senegal,SEN,1985,198.6
+Senegal,SEN,2000,213.8
+Serbia,SRB,2005,433.5
+Serbia,SRB,2010,430.7
+Serbia,SRB,2015,468.9
+Seychelles,SYC,1990,163.7
+Seychelles,SYC,2005,150.8
+Sierra Leone,SLE,1985,100.5
+Sierra Leone,SLE,2000,42.72
+Sierra Leone,SLE,2005,39.36
+Singapore,SGP,1975,81.97
+Slovakia,SVK,1995,243.6
+Slovakia,SVK,2000,203.2
+Slovakia,SVK,2005,127.6
+Slovakia,SVK,2010,122.8
+Slovakia,SVK,2015,103.1
+Slovenia,SVN,2000,452.3
+Slovenia,SVN,2005,463.5
+Slovenia,SVN,2010,449.9
+Slovenia,SVN,2015,559
+Somalia,SOM,1985,131.9
+Somalia,SOM,2000,420.3
+Somalia,SOM,2005,370.2
+South Africa,ZAF,1990,344.4
+South Africa,ZAF,1995,300.5
+South Africa,ZAF,2000,276.4
+South Africa,ZAF,2015,284.5
+South Korea,KOR,1990,470.6
+South Korea,KOR,1995,561.8
+South Korea,KOR,2000,623.5
+South Korea,KOR,2005,605.7
+South Sudan,SSD,2010,59.92
+Spain,ESP,1975,983.5
+Spain,ESP,1980,1045
+Spain,ESP,1985,1177
+Spain,ESP,1990,936.6
+Spain,ESP,1995,865.1
+Spain,ESP,2000,859.5
+Spain,ESP,2005,786.8
+Spain,ESP,2010,800.9
+Sri Lanka,LKA,1990,550.6
+Sri Lanka,LKA,2000,682.5
+Sri Lanka,LKA,2005,653.6
+Sudan,SDN,2010,714.1
+Suriname,SUR,1985,1198
+Suriname,SUR,2000,1378
+Suriname,SUR,2005,1229
+Sweden,SWE,1970,501.5
+Sweden,SWE,1975,501.5
+Sweden,SWE,1980,493.3
+Sweden,SWE,1985,353
+Sweden,SWE,1990,342.6
+Sweden,SWE,1995,306
+Sweden,SWE,2000,300.3
+Sweden,SWE,2005,287.3
+Sweden,SWE,2010,281.8
+Switzerland,CHE,1975,409.7
+Switzerland,CHE,1980,408.3
+Switzerland,CHE,1985,405.1
+Switzerland,CHE,1990,395.5
+Switzerland,CHE,1995,360.9
+Switzerland,CHE,2000,347.7
+Switzerland,CHE,2010,249.9
+Syria,SYR,1975,413
+Syria,SYR,1995,952.3
+Syria,SYR,2000,962.5
+Syria,SYR,2005,862.8
+Tajikistan,TJK,1995,1999
+Tajikistan,TJK,2000,1867
+Tajikistan,TJK,2005,1619
+Tanzania,TZA,2000,144.6
+Thailand,THA,2005,863.7
+Timor,TLS,2005,1148
+Togo,TGO,1985,26.21
+Togo,TGO,2000,32.87
+Trinidad and Tobago,TTO,1995,235.5
+Trinidad and Tobago,TTO,2000,245.7
+Trinidad and Tobago,TTO,2005,263.6
+Trinidad and Tobago,TTO,2010,285.5
+Tunisia,TUN,1975,180.9
+Tunisia,TUN,1980,282.2
+Tunisia,TUN,1985,299
+Tunisia,TUN,1990,357.4
+Tunisia,TUN,1995,304.5
+Tunisia,TUN,2000,288.9
+Tunisia,TUN,2010,303.7
+Turkey,TUR,1990,566.2
+Turkey,TUR,2000,644.9
+Turkey,TUR,2005,576.9
+Turkey,TUR,2010,561.3
+Turkmenistan,TKM,1995,5484
+Turkmenistan,TKM,2000,5415
+Turkmenistan,TKM,2005,5753
+Uganda,UGA,1970,20.02
+Uganda,UGA,2000,12.52
+Uganda,UGA,2010,17.99
+Ukraine,UKR,1990,506.7
+Ukraine,UKR,2000,381.7
+Ukraine,UKR,2005,326.1
+Ukraine,UKR,2010,327.7
+United Arab Emirates,ARE,1980,777.2
+United Arab Emirates,ARE,1995,812.3
+United Arab Emirates,ARE,2000,855.6
+United Arab Emirates,ARE,2005,665.2
+United Kingdom,GBR,1980,240.2
+United Kingdom,GBR,1985,203.5
+United Kingdom,GBR,1990,209.9
+United Kingdom,GBR,1995,208
+United Kingdom,GBR,2000,266.6
+United Kingdom,GBR,2005,139.2
+United Kingdom,GBR,2010,129.2
+United States,USA,1980,2213
+United States,USA,1990,2169
+United States,USA,2000,1939
+United States,USA,2005,1864
+United States,USA,2010,1543
+Uruguay,URY,1965,236.4
+Uruguay,URY,2000,1100
+Uzbekistan,UZB,1995,2473
+Uzbekistan,UZB,2000,2415
+Uzbekistan,UZB,2005,2106
+Venezuela,VEN,1970,333.7
+Venezuela,VEN,2000,356.9
+Venezuela,VEN,2005,817.8
+Vietnam,VNM,1980,665
+Vietnam,VNM,1985,708.7
+Vietnam,VNM,2005,956.4
+Yemen,YEM,1990,221.4
+Yemen,YEM,2000,180.5
+Yemen,YEM,2005,164.3
+Zambia,ZMB,1990,203.7
+Zambia,ZMB,1995,174.7
+Zambia,ZMB,2000,141.1

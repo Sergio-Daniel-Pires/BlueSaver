@@ -1,5 +1,8 @@
 from flask_restx import Namespace, Resource
 from flask import request
+from flask import Flask, render_template
+
+from .funcoes import show_graph
 
 from . import grafico_options
 
@@ -18,5 +21,5 @@ class GraficosVer(Resource):
         idade = formulario.get('Idade', None)
         if idade is None:
             return "Idade não pode ser vazia!", 400
-
-        return f"Sem graficos definidos ainda, mas sua idade é {idade}!", 200
+        
+        return show_graph(idade)
