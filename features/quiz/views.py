@@ -2,7 +2,7 @@ from flask_restx import Namespace, Resource
 from flask import request, current_app
 from . import quiz_gerar, quiz_responder
 
-from .funcoes import *
+from .quiz_funcoes import *
 
 quiz_ns = Namespace("Quiz da Água", description="Sabe bastante sobre o uso da água no mundo? Teste seu conhecimento aqui!")
 
@@ -20,9 +20,8 @@ class GerarQuiz(Resource):
         if dificuldade is None:
             return "Dificuldade não pode ser vazia!", 400
 
-        #return f"Seu quiz tem dificuldade {dificuldade}", 200
         STATIC = current_app.config['STATIC']
-        return escolher_perguntas(dificuldade, STATIC), 200
+        return escolher_perguntas(dificuldade, STATIC)
 
 @quiz_ns.route('/responder')
 class ResponderQuiz(Resource):
@@ -35,7 +34,7 @@ class ResponderQuiz(Resource):
         """
         formulario = dict(request.form)
         dificuldade = formulario.get('Dificuldade', None)
-        respostas = [formulario.get(f'Resposta {n}', None) for n in range(1, 4)]
+        respostas = [formulario.get(f'Resposta {n}', None) for n in range(1, 5)]  # ToDo tornar o último elemento (no caso, 5) variável
         if dificuldade is None:
             return "Dificuldade não pode ser vazia!", 400
         if None in respostas:
