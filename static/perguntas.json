@@ -1,7 +1,7 @@
 {
     "Fácil": {
         "q1": {
-            "Pergunta": "1) F:Qual a fórmula da água?",
+            "Pergunta": "F:Qual a fórmula da água?",
             "Opcoes": {
                 "a": "H2O",
                 "b": "NaCl",

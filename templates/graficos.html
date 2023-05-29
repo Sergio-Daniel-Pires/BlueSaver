@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1 class="mt-4">Bem vindo ao projeto BlueSaver!</h1>
+    <hr>
+    <div class="form-group">
+        <label for="idade">Selecione a idade:</label>
+        <select class="form-control" id="idade">
+            <option value="">Selecione</option>
+            <option value="8_old">Até 8 anos</option>
+            <option value="between_9_and_15">Entre 9 e 15 anos</option>
+            <option value="up_to_16">16 anos</option>
+        </select>
+    </div>
+    <div id="imagem-container" class="mt-4">
+        <!-- Aqui será renderizado o iframe com a imagem -->
+    </div>
+
+    <script>
+        // Event listener para o dropdown de idade
+        document.getElementById("idade").addEventListener("change", function () {
+            var idadeSelecionada = this.value;
+            var imagemContainer = document.getElementById("imagem-container");
+
+            // Remove o conteúdo anterior do container
+            imagemContainer.innerHTML = "";
+
+            if (idadeSelecionada) {
+                // Cria o elemento iframe com a imagem
+                var iframe = document.createElement("iframe");
+                iframe.src = "/graficos/" + idadeSelecionada;
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.classList.add("graficos-iframe");
+
+                // Adiciona o iframe ao container
+                imagemContainer.appendChild(iframe);
+                
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+            }
+        });
+    </script>
+{% endblock %}  
