@@ -16,7 +16,7 @@ def escolher_perguntas(dificuldade: str, arquivos_estaticos: str) -> dict:
     new_dict = {}
 
     for idx, questao in enumerate(nivel):
-        new_dict.update({f"Pegunta {idx+1}":nivel[questao]['Pergunta']})
+        new_dict.update({f"Pergunta {idx+1}":nivel[questao]['Pergunta']})
         new_dict.update({f"Opcoes {idx+1}": [nivel[questao]['Opcoes']]})
 
     return new_dict, 200

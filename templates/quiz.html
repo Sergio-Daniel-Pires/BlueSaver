@@ -15,11 +15,11 @@
 
     <label for="perguntas">Perguntas:</label>
     <ul id="perguntas"></ul>
-
+    
     <br><br>
-
+    
     <label for="respostas">Respostas:</label>
-    <div id="respostas"></div>
+    <ul id="respostas"></ul>
 
     <br><br>
 
@@ -57,24 +57,38 @@
                         $('#respostas').empty();
 
                         // Preencher as perguntas e respostas
-                        var letras = ['a', 'b', 'c', 'd', 'e'];
+                        var letras = ['a', 'b', 'c'];
+                        var perguntasTable = $('<table>').addClass('table');
+                        var respostasTable = $('<table>').addClass('table');
                         $.each(response, function(key, value) {
-                            if (key.startsWith('Pegunta')) {
+                            if (key.startsWith('Pergunta')) {
                                 var pergunta = value;
-                                var item = $('<li>').text(pergunta);
-                                $('#perguntas').append(item);
+                                var row = $('<tr>');
+                                var cell = $('<td>').text(pergunta);
+                                var perguntasCell = $('<td>').text("Pergunta " + key.split(' ')[1]);
+                                row.append(perguntasCell);
+                                row.append(cell);
+                                perguntasTable.append(row);
                             }
                             if (key.startsWith('Opcoes')) {
                                 var opcoes = value[0];
-                                var div = $('<div>');
+                                var row = $('<tr>');
+                                var respostasCell = $('<td>').text("Resposta " + key.split(' ')[1]);
+                                row.append(respostasCell);
                                 $.each(opcoes, function(letra, resposta) {
-                                    var radio = $('<input>').attr('type', 'radio').attr('name', 'respostas').val(letra);
-                                    var label = $('<label>').text(letras[letra] + ') ' + resposta);
-                                    div.append(radio).append(label).append('<br>');
+                                    var radioId = 'resposta-' + key.split(' ')[1] + '-' + letra;
+                                    var radio = $('<input>').attr('type', 'radio').attr('name', key.split(' ')[1]).val(letra).attr('id', radioId).addClass('resposta-radio');
+                                    var label = $('<label>').text(resposta).attr('for', radioId);
+                                    var cell = $('<td>').append(radio).append(label);
+                                    row.append(cell);
+                                    respostasTable.append(row);
                                 });
-                                $('#respostas').append(div);
                             }
                         });
+
+                        $('#perguntas').append(perguntasTable);
+                        $('#respostas').append(respostasTable);
+
                     }
                 });
             });
