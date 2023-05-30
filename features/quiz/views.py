@@ -1,13 +1,19 @@
-from flask import Flask, render_template, request, jsonify, Blueprint, current_app
+from flask import render_template, request, jsonify, current_app, make_response
+from flask_restx import Namespace, Resource
+
 from .quiz_funcoes import escolher_perguntas, verifica_resposta
+from . import quiz_gerar, quiz_responder
 
-quiz_bp = Blueprint("Quiz", "quiz", url_prefix='/quiz')
 
-@quiz_bp.route('/', methods=['GET', 'POST'])
-def quiz():
-    if request.method == 'GET':
-        return render_template('quiz.html')
-    elif request.method == 'POST':
+quiz_ns = Namespace("Quiz da Água", description="Sabe bastante sobre o uso da água no mundo? Teste seu conhecimento aqui!")
+
+@quiz_ns.route('/')
+class GerarQuiz(Resource):
+    def get(self):
+        return make_response(render_template('quiz.html'), 200)
+    
+    @quiz_ns.doc(expect=[quiz_gerar])
+    def post(self):
         """
         Preencha aqui a função 'receber quiz'
         
@@ -23,21 +29,23 @@ def quiz():
         perguntas, _ = escolher_perguntas(dificuldade, STATIC)
         return jsonify(perguntas)
 
-@quiz_bp.route('/verificar_respostas', methods=['POST'])
-def verificar_respostas():
-    """ 
-    Preencha aqui a 'devolver quiz'
-    
-    Essa função deve receber as respostas das perguntas do quiz e devolver a pontuação.
-    """
-    formulario = dict(request.form)
-    dificuldade = formulario.get('Dificuldade', None)
-    respostas = [formulario.get(f'Resposta {n}', None) for n in range(1, 5)]  # ToDo tornar o último elemento (no caso, 5) variável
-    if dificuldade is None:
-        return "Dificuldade não pode ser vazia!", 400
-    if None in respostas:
-        return f"Resposta {respostas.index(None)} não pode ser vazia!"
+@quiz_ns.route('/responder')
+class ResponderQuiz(Resource):
+    @quiz_ns.doc(expect=[quiz_gerar, quiz_responder])
+    def post(self):
+        """ 
+        Preencha aqui a 'devolver quiz'
+        
+        Essa função deve receber as respostas das perguntas do quiz e devolver a pontuação.
+        """
+        formulario = dict(request.form)
+        dificuldade = formulario.get('Dificuldade', None)
+        respostas = formulario.get(f'Resposta')
+        if dificuldade is None:
+            return "Dificuldade não pode ser vazia!", 400
+        if respostas is None:
+            return f"Resposta não pode ser vazia!"
 
-    STATIC = current_app.config['STATIC']
-    resultado = verifica_resposta(dificuldade, respostas, STATIC)
-    return jsonify(resultado)
+        STATIC = current_app.config['STATIC']
+        resultado = verifica_resposta(dificuldade, respostas, STATIC)
+        return jsonify(resultado)

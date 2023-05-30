@@ -1,6 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask
+from flask_restx import Api
 from .config import config
 import os
+
+api = Api(
+    title="BlueSaver - MC426",
+    version="1.0",
+    doc="/docs",
+    description="Projeto com várias funcionalidades sobre a aplicação/uso da água na nossa sociedade",
+)
 
 def create_app(config_name: str = None):
     app = Flask(__name__)
@@ -8,26 +16,21 @@ def create_app(config_name: str = None):
         config_name = os.environ.get("FLASK_CONFIG", "production")
 
     # Rotas das Features
+    # Home
+    from .features.home.views import home_ns
+    api.add_namespace(home_ns, path='/home')
+    
     # Graficos
-    """
     from .features.graficos.views import graficos_ns
     api.add_namespace(graficos_ns, path='/graficos')
 
     # Quiz
     from .features.quiz.views import quiz_ns
     api.add_namespace(quiz_ns, path='/quiz')
-    """
-    from features.home.views import home_bp
-    app.register_blueprint(home_bp)
-
-    from features.graficos.views import grafico_bp
-    app.register_blueprint(grafico_bp)
-
-    from features.quiz.views import quiz_bp
-    app.register_blueprint(quiz_bp)
 
     # Configuracao Flask
     app.config.from_object(config[config_name])
+    api.init_app(app)
 
     return app
 

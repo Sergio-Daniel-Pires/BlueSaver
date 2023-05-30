@@ -94,13 +94,14 @@
             });
             $('#verificar').click(function () {
                 var dificuldade = $('#dificuldade').val();
-                var respostas = $('input[name=respostas]:checked').map(function () {
+                var respostas = $('input[class=resposta-radio]:checked').map(function () {
                     return $(this).val();
                 }).get();
+
                 $.ajax({
-                    url: '/verificar_respostas',
+                    url: '/quiz/verificar_respostas',
                     type: 'POST',
-                    data: {Dificuldade: dificuldade, Respostas: respostas},
+                    data: { Dificuldade: dificuldade, Respostas: respostas },
                     success: function (response) {
                         // Exibir o resultado das respostas
                         var resultado = $('<div>').html('<h3>Resultado:</h3>');
