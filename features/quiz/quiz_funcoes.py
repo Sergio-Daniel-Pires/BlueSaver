@@ -22,16 +22,16 @@ def escolher_perguntas(dificuldade: str, arquivos_estaticos: str) -> dict:
         perguntas = json.loads(perguntas_json.read())   
 
     nivel = perguntas[dificuldade]
-    perguntas = []
+    result = {}
 
     for questao in nivel:
         new_dict = {
-            questao: nivel[questao]['Pergunta'],
+            'Pergunta': nivel[questao]['Pergunta'],
             'Opcoes': nivel[questao]['Opcoes']
         }
-        perguntas.append(new_dict)
+        result[questao] = new_dict
 
-    return perguntas, 200
+    return result, 200
 
 def verifica_resposta(dificuldade: str, respostas: dict, arquivos_estaticos: str)-> dict:
     """
@@ -70,7 +70,8 @@ def verifica_resposta(dificuldade: str, respostas: dict, arquivos_estaticos: str
             'resposta': resposta,
             'correta': correta,
         }
-        result.append(new_resp)
+        result[num_resp] = new_resp
+        
         acertos += (resposta == correta)
         
     result['resultado'] = {

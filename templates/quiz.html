@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='quiz.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justgage@1.6.1/dist/justgage.min.js"></script>
     <h1>Quiz</h1>
     <hr>
 
@@ -27,92 +30,8 @@
 
     <br><br>
 
-    <div id="resultado"></div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Evento de clique nos botões de dificuldade
-            $('.btn-dificuldade').click(function() {
-                var dificuldade = $(this).data('dificuldade');
-
-                // Remove todas as classes de cor dos botões de dificuldade
-                $('.btn-dificuldade').removeClass('btn-success btn-warning btn-danger');
-
-                // Adiciona a classe de cor correta com base na dificuldade selecionada
-                if (dificuldade === 'Fácil') {
-                    $(this).addClass('btn-success');
-                } else if (dificuldade === 'Médio') {
-                    $(this).addClass('btn-warning');
-                } else if (dificuldade === 'Difícil') {
-                    $(this).addClass('btn-danger');
-                }
-
-                $.ajax({
-                    url: '/quiz',
-                    type: 'POST',
-                    data: { Dificuldade: dificuldade },
-                    success: function(response) {
-                        // Limpar as perguntas e respostas anteriores
-                        $('#perguntas').empty();
-                        $('#respostas').empty();
-
-                        // Preencher as perguntas e respostas
-                        var letras = ['a', 'b', 'c'];
-                        var perguntasTable = $('<table>').addClass('table');
-                        var respostasTable = $('<table>').addClass('table');
-                        $.each(response, function(key, value) {
-                            if (key.startsWith('Pergunta')) {
-                                var pergunta = value;
-                                var row = $('<tr>');
-                                var cell = $('<td>').text(pergunta);
-                                var perguntasCell = $('<td>').text("Pergunta " + key.split(' ')[1]);
-                                row.append(perguntasCell);
-                                row.append(cell);
-                                perguntasTable.append(row);
-                            }
-                            if (key.startsWith('Opcoes')) {
-                                var opcoes = value[0];
-                                var row = $('<tr>');
-                                var respostasCell = $('<td>').text("Resposta " + key.split(' ')[1]);
-                                row.append(respostasCell);
-                                $.each(opcoes, function(letra, resposta) {
-                                    var radioId = 'resposta-' + key.split(' ')[1] + '-' + letra;
-                                    var radio = $('<input>').attr('type', 'radio').attr('name', key.split(' ')[1]).val(letra).attr('id', radioId).addClass('resposta-radio');
-                                    var label = $('<label>').text(resposta).attr('for', radioId);
-                                    var cell = $('<td>').append(radio).append(label);
-                                    row.append(cell);
-                                    respostasTable.append(row);
-                                });
-                            }
-                        });
-
-                        $('#perguntas').append(perguntasTable);
-                        $('#respostas').append(respostasTable);
-
-                    }
-                });
-            });
-            $('#verificar').click(function () {
-                var dificuldade = $('#dificuldade').val();
-                var respostas = $('input[class=resposta-radio]:checked').map(function () {
-                    return $(this).val();
-                }).get();
-
-                $.ajax({
-                    url: '/quiz/verificar_respostas',
-                    type: 'POST',
-                    data: { Dificuldade: dificuldade, Respostas: respostas },
-                    success: function (response) {
-                        // Exibir o resultado das respostas
-                        var resultado = $('<div>').html('<h3>Resultado:</h3>');
-                        $.each(response, function (key, value) {
-                            var linha = $('<p>').text(key + ': ' + value);
-                            resultado.append(linha);
-                        });
-                        $('#resultado').html(resultado);
-                    }
-                });
-            });
-        });
-    </script>
+    <div id="resultado">
+        <h3>Resultado:</h3>
+        <div id="gauge"></div>
+    </div>
 {% endblock %}

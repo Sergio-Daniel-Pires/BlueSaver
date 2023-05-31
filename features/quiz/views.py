@@ -1,5 +1,6 @@
 from flask import render_template, request, jsonify, current_app, make_response
 from flask_restx import Namespace, Resource
+import json
 
 from .quiz_funcoes import escolher_perguntas, verifica_resposta
 from . import quiz_gerar, quiz_responder
@@ -40,12 +41,13 @@ class ResponderQuiz(Resource):
         """
         formulario = dict(request.form)
         dificuldade = formulario.get('Dificuldade', None)
-        respostas = formulario.get(f'Resposta')
+        respostas = formulario.get('Resposta', None)
         if dificuldade is None:
             return "Dificuldade não pode ser vazia!", 400
         if respostas is None:
             return f"Resposta não pode ser vazia!"
 
         STATIC = current_app.config['STATIC']
+        respostas = json.loads(respostas)
         resultado = verifica_resposta(dificuldade, respostas, STATIC)
         return jsonify(resultado)
