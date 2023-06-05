@@ -87,14 +87,10 @@ window.onload = function () {
                     acertos = response['resultado']['acertos'];
                     total = response['resultado']['total'];
                     var porcentagemAcertos = (acertos / total) * 100;
-                    var label = "Sua nota foi muito boa, parabens!";
+                    var label = "Parabens!";
                     if (porcentagemAcertos < 50){
-                        label = "Estude mais na aba Gráficos e tente novamente!";
+                        label = "Estude mais!";
                     } 
-
-                    // Atualizar o medidor circular de acordo com a porcentagem de acertos
-                    var gaugeFill = $('#gauge-fill');
-                    var gaugeLabel = $('#gauge-label');
 
                     var gauge = new JustGage({
                         id: "gauge",
@@ -102,7 +98,7 @@ window.onload = function () {
                         min: 0,
                         max: 100,
                         title: "Porcentagem de Acertos",
-                        label: "",
+                        label: label,
                         gaugeWidthScale: 0.6,
                         counter: true,
                         relativeGaugeSize: true,
