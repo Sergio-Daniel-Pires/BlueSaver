@@ -15,6 +15,23 @@ Por fim, nosso último requisito veio também com um Brainstorm entre os desenvo
 **Implementar uma tela inicial onde o usuário entrará com seus dados**, como idade, estado, nome etc. Após isso ele será levado a tela principal do software onde teram as usabilidades para ele.
 Com isso, o usuário não terá que ficar colando seus dados de maneira repetida em cada usabilidade que ele for acessar e que é necessário utilizar esses dados. Além disso, nós como desenvolvedores, ganhamos com isso também pois não será necessario implementar essa parte de coleta no código de cada feature.
 
+O sistema deve…
+1. Permitir o cálculo mensal do consumo de água de uma família  
+    a. Disponibilizar uma interface para o usuário registrar: número de membros na família e consumo diário da família (funcional)   
+    b. Ser fácil de usar ou aprender (não funcional)  
+    c. Apresentar a faixa de consumo da família dependendo do cálculo (funcional)  
+    d. Botão para permitir que o usuário refaça o cálculo quantas vezes ele quiser (funcional)  
+2. Informar sobre o consumo de água do agronegócio  
+    a. Permitir que o usuário consulte os dados de gasto hídrico do agronegócio  
+    b. Permitir que o usuário compare seu uso de água pessoal com o do agronegócio  
+    c. Permitir que o usuário compare o gasto hídrico do agronegócio com o consumo diário médio global  
+    d. Permitir que o usuário consulte a fonte dos dados
+3. Permitir salvar informações básicas numa tela inicial  
+    a. Disponibilizar uma interface para o usuário registrar dados básicos  
+    b. Permitir dados serem capturados dinamicamente (Sistema métrico ou Imperial)  
+    c. Permitir que dados fiquem salvos ao sair da página
+
+
 ### ¹Links  
 [calculadora de consumo de água](https://www.saaesorocaba.com.br/calculadora-de-consumo-de-agua/)  
 [app para reduzir consumo de água](https://ciclovivo.com.br/inovacao/negocios/software-gratuito-ajuda-a-reduzir-desperdicio-de-agua-em-condominios/)  
