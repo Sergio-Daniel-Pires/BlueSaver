@@ -1,6 +1,5 @@
 pytest==7.3.1
 flask==2.3.0
-flask-restx==1.1.0
 plotly==5.14.1
 pandas==2.0.1
 kaleido==0.2.1

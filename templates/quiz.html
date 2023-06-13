@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='quiz.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/justgage@1.6.1/dist/justgage.min.js"></script>
+    <h1>Quiz</h1>
+    <hr>
+
+    <label for="dificuldade">Selecione a dificuldade:</label><br>
+    <div class="btn-group" role="group" aria-label="Dificuldade">
+        <button type="button" id="dificuldade" class="btn btn-success btn-dificuldade" data-dificuldade="Fácil">Fácil</button>
+        <button type="button" id="dificuldade" class="btn btn-warning btn-dificuldade" data-dificuldade="Médio">Médio</button>
+        <button type="button" id="dificuldade" class="btn btn-danger btn-dificuldade" data-dificuldade="Difícil">Difícil</button>
+    </div>
+
+    <br><br>
+
+    <label for="perguntas">Perguntas:</label>
+    <ul id="perguntas"></ul>
+    
+    <br><br>
+    
+    <label for="respostas">Respostas:</label>
+    <ul id="respostas"></ul>
+
+    <br><br>
+
+    <button id="verificar">Verificar Respostas</button>
+
+    <br><br>
+
+    <div id="resultado">
+        <h3>Resultado:</h3>
+        <div id="gauge"></div>
+    </div>
+{% endblock %}
