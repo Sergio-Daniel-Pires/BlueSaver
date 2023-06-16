@@ -1,5 +1,12 @@
 .footer {
     background-color: #f8f9fa;
+    width: 100%;
+    position:relative;
+}
+
+.div_vazia{
+    height: 300px;
+    display: block;
 }
 
 .footer-content {

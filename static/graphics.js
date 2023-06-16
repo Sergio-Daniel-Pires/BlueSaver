@@ -13,6 +13,7 @@ window.onload = function () {
                 success: function(response){
                     console.log(response)
                     $("#imagem-container").html(response);
+                    div_vazia.style.display= 'none';
                 }
             });
         }
