@@ -17,7 +17,7 @@ def show_graph_specify(idade: str):
     if idade not in ('8_old', 'between_9_and_15', 'up_to_16'):
         return Response('Idade invalida, por favor, insira outra e tente novamente', 400)
 
-    if idade == "8_old": # Simples, eu não importo, pedi pra não fazerem isso
+    if idade == "8_old": 
         list_values = data.get_graph_as_csv("industrial-water-withdrawal")
         df_industrial = pd.DataFrame(list_values[1:], columns=list_values[0])
 
