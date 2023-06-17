@@ -16,6 +16,15 @@ window.onload = function () {
                 $(this).addClass('btn-danger');
             }
 
+            const audio = new Audio("/static/sons/mixkit-liquid-bubble-3000.wav");
+            const buttons = document.querySelectorAll("button");
+
+            buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                audio.play();
+            });
+            });
+
             $.ajax({
                 url: '/quiz',
                 type: 'POST',
@@ -113,4 +122,9 @@ window.onload = function () {
             });
         });
     });
+}
+
+function sound(){
+    var aud = new Audio('/static/sons/mixkit-liquid-bubble-3000.wav')
+    aud.play()
 }
