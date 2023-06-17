@@ -29,3 +29,14 @@
     display: block;
 
 }
+
+.input_form {
+    border: 2px solid #605eff;
+    padding: 5px;
+    transition: box-shadow 1s ease;
+    border-radius: 10px;
+}
+
+.input_form:focus {
+    box-shadow: 0 0 5px rgba(0, 38, 255, 1);
+}
