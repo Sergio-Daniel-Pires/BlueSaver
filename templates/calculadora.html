@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='calculator.js') }}"></script>
+    <h1>Calculadora de Consumo de Água</h1>
+    <hr>
+    <form>
+        <label for="qtd_pessoas">Quantas pessoas moram com você?</label>
+        <input type="number" id="qtd_pessoas" name="qtd_pessoas" placeholder="Exemplo: 4" required title="Por favor preencha todos os campos">
+        </br>
+        <label for="gasto_mensal">Qual foi o consumo mensal em sua casa em metros cúbicos?</label>
+        <input type="number" id="gasto_mensal" name="gasto_mensal" placeholder="Exemplo: 20" required required title="Por favor preencha todos os campos">
+        </br>
+        <button type="button" onclick="calculator()">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+    <div class="div_vazia"></div>
+
+
+{% endblock %}  
