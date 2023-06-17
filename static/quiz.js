@@ -16,6 +16,7 @@ window.onload = function () {
                 $(this).addClass('btn-danger');
             }
 
+            /**
             const audio = new Audio("/static/sons/mixkit-liquid-bubble-3000.wav");
             const buttons = document.querySelectorAll("button");
 
@@ -24,6 +25,7 @@ window.onload = function () {
                 audio.play();
             });
             });
+            **/
 
             $.ajax({
                 url: '/quiz',
@@ -124,7 +126,27 @@ window.onload = function () {
     });
 }
 
-function sound(){
-    var aud = new Audio('/static/sons/mixkit-liquid-bubble-3000.wav')
-    aud.play()
+function sound_bubble(){
+    if(!muted){
+        const aud = new Audio('/static/sons/mixkit-liquid-bubble-3000.wav')
+        aud.play()
+    }
+}
+
+function sound_piano(){
+    if(!muted){
+        const aud = new Audio('/static/sons/mixkit-quick-win-video-game-notification-269.wav')
+        aud.play()
+    }
+}
+
+function mute_element(element){
+    element.muted = !element.muted;
+}
+
+var muted = false;
+
+function mute_all(){
+    document.querySelectorAll("audio").forEach( element => mute_element(element));
+    muted = !muted;
 }
