@@ -150,3 +150,20 @@ function mute_all(){
     document.querySelectorAll("audio").forEach( element => mute_element(element));
     muted = !muted;
 }
+
+/**
+var audio = document.getElementById("bg-song");
+var volumeControl = document.getElementById("volume-slider");
+
+var setVolume = function(e){
+    audio.volume = e.currentTarget.value / 100;
+};
+
+volumeControl.addEventListener("change", setVolume);
+volumeControl.addEventListener("input", setVolume);
+**/
+
+function setVolume(value) {
+    var audio = document.getElementById("bgsong");
+    audio.volume = value / 100;
+  };
