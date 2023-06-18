@@ -16,6 +16,17 @@ window.onload = function () {
                 $(this).addClass('btn-danger');
             }
 
+            /**
+            const audio = new Audio("/static/sons/mixkit-liquid-bubble-3000.wav");
+            const buttons = document.querySelectorAll("button");
+
+            buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                audio.play();
+            });
+            });
+            **/
+
             $.ajax({
                 url: '/quiz',
                 type: 'POST',
@@ -114,3 +125,45 @@ window.onload = function () {
         });
     });
 }
+
+function sound_bubble(){
+    if(!muted){
+        const aud = new Audio('/static/sons/mixkit-liquid-bubble-3000.wav')
+        aud.play()
+    }
+}
+
+function sound_piano(){
+    if(!muted){
+        const aud = new Audio('/static/sons/mixkit-quick-win-video-game-notification-269.wav')
+        aud.play()
+    }
+}
+
+function mute_element(element){
+    element.muted = !element.muted;
+}
+
+var muted = false;
+
+function mute_all(){
+    document.querySelectorAll("audio").forEach( element => mute_element(element));
+    muted = !muted;
+}
+
+/**
+var audio = document.getElementById("bg-song");
+var volumeControl = document.getElementById("volume-slider");
+
+var setVolume = function(e){
+    audio.volume = e.currentTarget.value / 100;
+};
+
+volumeControl.addEventListener("change", setVolume);
+volumeControl.addEventListener("input", setVolume);
+**/
+
+function setVolume(value) {
+    var audio = document.getElementById("bgsong");
+    audio.volume = value / 100;
+  };

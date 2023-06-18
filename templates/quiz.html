@@ -7,13 +7,20 @@
     <h1>Quiz</h1>
     <hr>
 
-    <embed src="/static/forest-river-with-whirls.mp3" hidden="true" loop='true' autostart="true" width="2" height="0"> 
+    <audio id='bgsong' src="/static/sons/forest-river-with-whirls.mp3" autoplay loop>
+        <p>Your browser does not suppor the audio element.</p>
+    </audio>
 
+    <input type="range" id = "volumeslider" min="0" max="100" step="1" value="100" onchange="setVolume(this.value)" oninput="setVolume(this.value)"/>
+    <br><br>
+    <button id="mutar" class="button" onclick="mute_all()">Ativar/desativar efeitos sonoros</button>
+
+    <br><br>
     <label for="dificuldade">Selecione a dificuldade:</label><br>
-    <div class="btn-group" role="group" aria-label="Dificuldade">
-        <button type="button" id="dificuldade" class="btn btn-success btn-dificuldade" data-dificuldade="Fácil">Fácil</button>
-        <button type="button" id="dificuldade" class="btn btn-warning btn-dificuldade" data-dificuldade="Médio">Médio</button>
-        <button type="button" id="dificuldade" class="btn btn-danger btn-dificuldade" data-dificuldade="Difícil">Difícil</button>
+    <div class="btn-group" roles="group" aria-label="Dificuldade">
+        <button type="button" id="dificuldade" class="btn btn-success btn-dificuldade" data-dificuldade="Fácil" onclick="sound_bubble()">Fácil</button>
+        <button type="button" id="dificuldade" class="btn btn-warning btn-dificuldade" data-dificuldade="Médio" onclick="sound_bubble()">Médio</button>
+        <button type="button" id="dificuldade" class="btn btn-danger btn-dificuldade" data-dificuldade="Difícil" onclick="sound_bubble()">Difícil</button>
     </div>
 
     <br><br>
@@ -28,7 +35,7 @@
 
     <br><br>
 
-    <button id="verificar">Verificar Respostas</button>
+    <button id="verificar" class='button' onclick="sound_piano()">Verificar Respostas</button>
 
     <br><br>
 
