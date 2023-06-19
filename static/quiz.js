@@ -16,17 +16,6 @@ window.onload = function () {
                 $(this).addClass('btn-danger');
             }
 
-            /**
-            const audio = new Audio("/static/sons/mixkit-liquid-bubble-3000.wav");
-            const buttons = document.querySelectorAll("button");
-
-            buttons.forEach(button => {
-            button.addEventListener("click", () => {
-                audio.play();
-            });
-            });
-            **/
-
             $.ajax({
                 url: '/quiz',
                 type: 'POST',
@@ -150,18 +139,6 @@ function mute_all(){
     document.querySelectorAll("audio").forEach( element => mute_element(element));
     muted = !muted;
 }
-
-/**
-var audio = document.getElementById("bg-song");
-var volumeControl = document.getElementById("volume-slider");
-
-var setVolume = function(e){
-    audio.volume = e.currentTarget.value / 100;
-};
-
-volumeControl.addEventListener("change", setVolume);
-volumeControl.addEventListener("input", setVolume);
-**/
 
 function setVolume(value) {
     var audio = document.getElementById("bgsong");
