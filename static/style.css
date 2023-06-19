@@ -4,6 +4,11 @@
     width: 100%;
 }
 
+.div_vazia{
+    height: 300px;
+    display: block;
+}
+
 .footer-content {
     display: flex;
     flex-wrap: wrap;
