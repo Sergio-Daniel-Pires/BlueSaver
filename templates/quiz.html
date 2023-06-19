@@ -16,25 +16,25 @@
     <button id="mutar" class="button" onclick="mute_all()">Ativar/desativar efeitos sonoros</button>
 
     <br><br>
-
     <div id="quiz-container">
         <h2 id="question"></h2>
         <ul id="options"></ul>
-        <button id="submit">Submit</button>
-    </div>
-
-
-    <!-- 
-        Antigo código
-        <br><br>
-    <label for="dificuldade">Selecione a dificuldade:</label><br>
-    <div class="btn-group" roles="group" aria-label="Dificuldade">
-        <button type="button" id="dificuldade" class="btn btn-success btn-dificuldade" data-dificuldade="Fácil" onclick="sound_bubble()">Fácil</button>
-        <button type="button" id="dificuldade" class="btn btn-warning btn-dificuldade" data-dificuldade="Médio" onclick="sound_bubble()">Médio</button>
-        <button type="button" id="dificuldade" class="btn btn-danger btn-dificuldade" data-dificuldade="Difícil" onclick="sound_bubble()">Difícil</button>
+        <button id="submit" onclick="loadQuiz()" >Submit</button>
     </div>
 
     <br><br>
+    <label for="dificuldade">Selecione a dificuldade:</label><br>
+    <div class="btn-group" roles="group" aria-label="Dificuldade">
+        <button type="button" id="dificuldade" class="btn btn-success btn-dificuldade" data-dificuldade="Fácil"
+            onclick="sound_bubble()">Fácil</button>
+        <button type="button" id="dificuldade" class="btn btn-warning btn-dificuldade" data-dificuldade="Médio"
+            onclick="sound_bubble()">Médio</button>
+        <button type="button" id="dificuldade" class="btn btn-danger btn-dificuldade" data-dificuldade="Difícil"
+            onclick="sound_bubble()">Difícil</button>
+    </div>
+
+
+    <!-- <br><br>
 
     <label for="perguntas">Perguntas:</label>
     <ul id="perguntas"></ul>
