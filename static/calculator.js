@@ -38,10 +38,16 @@ window.onload = function (){
                         }
                         else{
                             var texto_faixa = "Sua faixa está alta, veja dicas de como reduzir!";
-                        }
-                
+                        }      
                         // Exibir o resultado
                         document.getElementById('resultado').innerHTML = texto_gasto_agua + '<br>' + texto_conta_agua + '<br>' + texto_faixa;
+                        document.getElementById('btn-calcular').innerText = "Refazer Calculo"
+                        
+                        // Reseta campos
+                        document.getElementById("qtd_pessoas").value = "";
+                        document.getElementById("estado").value = "";
+                        document.getElementById("gasto_mensal").value = "";;
+
                         document.getElementById('imagem-faixas').style.display = "";
                     }
                 })
