@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='calculator.js') }}"></script>
+    <h1>Calculadora de Consumo de Água</h1>
+    <hr>
+    <form>
+        <label for="qtd_pessoas">Quantidade de pessoas na casa:</label></br>
+        <input class= "input_form" type="number" id="qtd_pessoas" name="qtd_pessoas" placeholder="Exemplo: 4" required>
+        </br>
+
+        <label for="escolha">Escolha uma opção:</label></br>
+        <select class="input_form" id="estado" name="estado">
+            <option value="">Escolha seu estado</option>
+            <option value="norte">Norte</option>
+            <option value="nordeste">Nordeste</option>
+            <option value="sudeste">Sudeste</option>
+            <option value="sul">Sul</option>
+            <option value="centro_oeste">Centro-Oeste</option>
+        </select>
+        </br>
+
+        <label for="gasto_mensal">Consumo Mesal (M³):</label></br>
+        <input class= "input_form" type="number" id="gasto_mensal" name="gasto_mensal" placeholder="Exemplo: 18" required required>
+        </br>
+
+        <img src="{{ url_for('static', filename='exemplo_gasto_mensal_conta_de_agua.jpeg') }}" alt="exemplo consumo de água mês"> </br>
+        
+        </br><button type="button" id="btn-calcular">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+    <img id="imagem-faixas" style="display: none;" src="{{ url_for('static', filename='faixas.png') }}" alt="faixas de consumo de água"> </br>
+    <div class="div_vazia"></div>
+
+
+{% endblock %}  

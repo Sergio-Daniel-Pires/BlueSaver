@@ -1,7 +1,7 @@
 .footer {
     background-color: #f8f9fa;
+    position: relative;
     width: 100%;
-    position:relative;
 }
 
 .div_vazia{
@@ -27,4 +27,21 @@
     color: #333;
     margin-right: 10px;
     font-size: 24px;
+}
+
+.div_vazia{
+    height: 320px;
+    display: block;
+
+}
+
+.input_form {
+    border: 2px solid #605eff;
+    padding: 5px;
+    transition: box-shadow 1s ease;
+    border-radius: 10px;
+}
+
+.input_form:focus {
+    box-shadow: 0 0 5px rgba(0, 38, 255, 1);
 }

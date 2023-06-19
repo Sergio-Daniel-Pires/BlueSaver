@@ -20,6 +20,10 @@ def create_app(config_name: str = None):
     from views.quiz import quiz_bp
     app.register_blueprint(quiz_bp, url_prefix='/quiz')
 
+    # Calculadora de consumo de água
+    from views.calculadora import calculadora_bp
+    app.register_blueprint(calculadora_bp, url_prefix='/calculadora')
+
     # Configuracao Flask
     app.config.from_object(config[config_name])
 
