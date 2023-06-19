@@ -8,7 +8,7 @@
     <hr>
 
     <audio id='bgsong' src="/static/sons/forest-river-with-whirls.mp3" autoplay loop>
-        <p>Your browser does not suppor the audio element.</p>
+        <p>Your browser does not support the audio element.</p>
     </audio>
 
     <input type="range" id = "volumeslider" min="0" max="100" step="1" value="100" onchange="setVolume(this.value)" oninput="setVolume(this.value)"/>
@@ -16,6 +16,17 @@
     <button id="mutar" class="button" onclick="mute_all()">Ativar/desativar efeitos sonoros</button>
 
     <br><br>
+
+    <div id="quiz-container">
+        <h2 id="question"></h2>
+        <ul id="options"></ul>
+        <button id="submit">Submit</button>
+    </div>
+
+
+    <!-- 
+        Antigo código
+        <br><br>
     <label for="dificuldade">Selecione a dificuldade:</label><br>
     <div class="btn-group" roles="group" aria-label="Dificuldade">
         <button type="button" id="dificuldade" class="btn btn-success btn-dificuldade" data-dificuldade="Fácil" onclick="sound_bubble()">Fácil</button>
@@ -42,5 +53,5 @@
     <div id="resultado">
         <h3>Resultado:</h3>
         <div id="gauge"></div>
-    </div>
+    </div> -->
 {% endblock %}
