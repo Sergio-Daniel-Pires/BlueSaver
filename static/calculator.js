@@ -30,10 +30,19 @@ window.onload = function (){
                         var texto_gasto_agua = 'O consumo médio na sua residência é ' + response['gasto_pessoa'] + ' Litros/pessoa/dia';
                         //realiza o cálculo de valor médio da conta de água mensal
                         var texto_conta_agua = 'O preço médio de sua conta de luz será de: R$' + response['gasto_agua'].toFixed(2);
+                        if (response['gasto_agua'] < 25){
+                            var texto_faixa = "Sua faixa de água esta abaixo do ideal, parabens!";
+                        }
+                        else if (response['gasto_agua'] < 41){
+                            var texto_faixa = "Sua faixa está na média, veja dicas de como reduzir!";
+                        }
+                        else{
+                            var texto_faixa = "Sua faixa está alta, veja dicas de como reduzir!";
+                        }
                 
                         // Exibir o resultado
-                        document.getElementById('resultado').innerHTML = texto_gasto_agua + '<br>' + texto_conta_agua;
-
+                        document.getElementById('resultado').innerHTML = texto_gasto_agua + '<br>' + texto_conta_agua + '<br>' + texto_faixa;
+                        document.getElementById('imagem-faixas').style.display = "";
                     }
                 })
                 

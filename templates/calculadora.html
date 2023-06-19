@@ -24,12 +24,13 @@
         <input class= "input_form" type="number" id="gasto_mensal" name="gasto_mensal" placeholder="Exemplo: 18" required required>
         </br>
 
-        <img src="{{ url_for('static', filename='exemplo_gasto_mensal_conta_de_agua_1.png') }}" alt="exemplo consumo de água mês"> </br>
+        <img src="{{ url_for('static', filename='exemplo_gasto_mensal_conta_de_agua.jpeg') }}" alt="exemplo consumo de água mês"> </br>
         
         </br><button type="button" id="btn-calcular">Calcular</button>
     </form>
 
     <div id="resultado"></div>
+    <img id="imagem-faixas" style="display: none;" src="{{ url_for('static', filename='faixas.png') }}" alt="faixas de consumo de água"> </br>
     <div class="div_vazia"></div>
 
 
