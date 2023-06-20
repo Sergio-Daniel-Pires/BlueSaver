@@ -46,6 +46,15 @@
     box-shadow: 0 0 5px rgba(0, 38, 255, 1);
 }
 
+.tela_cheia {
+    display: none;
+    position: fixed;
+    right: 10px; /* Distância do lado esquerdo */
+    top: 10px; /* Distância do topo */
+    z-index: 9999;
+    border-radius: 10px;
+  }
+
 .column {
     display: flex;
     flex-direction: column;
