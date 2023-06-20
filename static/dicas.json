@@ -2,24 +2,40 @@
     "place_holder": "placeholder_hint.avif",
     "facil": [
         {
-            "texto": "Ao escovar os dentes, desligue a torneira",
+            "texto": "Ao escovar os dentes, desligue a torneira (Economia de até 80 Litros)",
             "imagem": "https://s2.glbimg.com/pnbF81SLE9lTWRD8HwA4weqGrLo=/620x455/e.glbimg.com/og/ed/f/original/2016/01/27/escova-dente-economia-agua-deca.jpg"
+        },
+        {
+            "texto": "Ao lavar a louça, desligue a torneira enquanto esfrega (Economia de até 100 Litros)",
+            "imagem": "https://s3.amazonaws.com/www.ypedia.com.br/wp-content/uploads/2021/05/24113246/Principal-shutterstock_1928249507-1024x660.jpg"
+        },
+        {
+            "texto": "Evite banhos longos (Economize até 95 a 180 Litros)",
+            "imagem": "https://img.freepik.com/vetores-premium/antecedentes-de-menino-cantando-no-banho_23-2147634426.jpg?w=826"
         }
     ],
     "medio": [
         {
-            "texto": "Para lavar pisos e parecidos, de preferência a lavadoras de alta pressão.",
+            "texto": "Para lavar pisos e parecidos, de preferência a lavadoras de alta pressão. (Economize até 280 Litros)",
             "imagem": "https://cdn.leroymerlin.com.br/contents/qual_a_melhor_lavadora_de_alta_pressao_62bf_original.jpeg"
         },
         {
             "texto": "Uma lava louças pode economizar 30x mais água do que uma lavagem comum!",
             "imagem": "https://s2.glbimg.com/fwLcM-d2ORQ7jm0c7TDI3w4nSrI=/s.glbimg.com/jo/g1/f/original/2014/09/11/editada_lava_louca1.jpg"
+        },
+        {
+            "texto": "Utilize um balde ao lavar o carro (Economize até 560 Litros em 30 minutos)",
+            "imagem": "https://c5.quickcachr.fotos.sapo.pt/i/o5a146305/18438633_88AjA.jpeg"
         }
     ],
     "dificil": [
         {
             "texto": "Colocar/trocar um arejador da torneira pode aumentar a economia mantendo a qualidade da água!",
             "imagem": "https://down-br.img.susercontent.com/file/a03c7a51f1fba19f2fd6114f6c8663d2"
+        },
+        {
+            "texto": "Troque o veda rosca com frequência para que as torneiras não pinguem",
+            "imagem": "https://www.empoeirados.com.br/wp-content/uploads/2014/06/Aprenda-instalar-uma-torneira-09.jpg"
         }
     ]
 }

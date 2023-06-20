@@ -13,15 +13,15 @@ window.onload = function () {
                     if (item.imagem === ""){
                         item.imagem = placeholder;
                     } 
-                    $("#facil").append('<a href="#" onerror="this.src='+ placeholder +';" class="item"><img src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
+                    $("#facil").append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
                 });
 
                 medio.forEach(function(item) {
-                    $("#medio").append('<a href="#" class="item"><img src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
+                    $("#medio").append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
                 });
 
                 dificil.forEach(function(item) {
-                    $("#dificil").append('<a href="#" class="item"><img src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
+                    $("#dificil").append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
                 });
             },
             error: function(error) {
