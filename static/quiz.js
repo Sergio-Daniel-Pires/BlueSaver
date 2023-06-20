@@ -102,7 +102,7 @@ function carregarQuiz() {
 function selecionarResposta(indiceSelecionado) {
     const perguntaAtualQuiz = dadosQuiz[dificuldade][perguntaAtual];
 
-    if (indiceSelecionado === perguntaAtualQuiz.respostaCorreta) {
+    if (indiceSelecionado === perguntaAtualQuiz.Correta) {
         pontuacao++;
     }
 
