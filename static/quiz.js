@@ -89,7 +89,7 @@ function carregarDadosQuiz() {
 function carregarQuiz() {
     const perguntaAtualQuiz = dadosQuiz[dificuldade][perguntaAtual];
 
-    $("#pergunta").text(perguntaAtualQuiz.pergunta);
+    $("#pergunta").text(perguntaAtualQuiz.Pergunta);
     $("#opcoes").empty();
 
     perguntaAtualQuiz.Opcoes.forEach((opcao, indice) => {
