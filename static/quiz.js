@@ -26,7 +26,6 @@ window.onload = function () {
                     $('#respostas').empty();
 
                     // Preencher as perguntas e respostas
-                    var letras = ['a', 'b', 'c'];
                     var perguntasTable = $('<table>').addClass('table');
                     var respostasTable = $('<table>').addClass('table');
                     $.each(response, function(key, value) {

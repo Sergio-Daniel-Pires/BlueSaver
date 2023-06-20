@@ -5,23 +5,17 @@ window.onload = function () {
             type: "GET",
             success: function(data) {
                 var placeholder = data.place_holder;
-                var facil = data.facil;
-                var medio = data.medio;
-                var dificil = data.dificil;
-
-                facil.forEach(function(item) {
-                    if (item.imagem === ""){
-                        item.imagem = placeholder;
-                    } 
-                    $("#facil").append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
-                });
-
-                medio.forEach(function(item) {
-                    $("#medio").append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
-                });
-
-                dificil.forEach(function(item) {
-                    $("#dificil").append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
+                var categorias = [data.facil, data.medio, data.dificil];
+                var ids = ["#facil", "#medio", "#dificil"];
+                
+                // Bloaters, Se tivessem +10 dificuldades, não deveriam ter +10 forEach, reduzido para forEach dinamico.
+                categorias.forEach(function(categoria, index) {
+                    categoria.forEach(function(item) {
+                        if (item.imagem === ""){
+                            item.imagem = placeholder;
+                        } 
+                        $(ids[index]).append('<a href="#" class="item"><img onerror="this.src='+ "'" + placeholder + "';" + '"src="' + item.imagem + '" alt="' + item.texto + '"><p>' + item.texto + '</p></a>');
+                    });
                 });
             },
             error: function(error) {

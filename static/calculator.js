@@ -44,9 +44,11 @@ window.onload = function (){
                         document.getElementById('btn-calcular').innerText = "Refazer Calculo"
                         
                         // Reseta campos
-                        document.getElementById("qtd_pessoas").value = "";
-                        document.getElementById("estado").value = "";
-                        document.getElementById("gasto_mensal").value = "";;
+                        // Bloaters, muitas linhas identicas reduzidas para forEach
+                        var ids = ["qtd_pessoas", "estado", "gasto_mensal"];
+                        ids.forEach(function(item){
+                            document.getElementById(item).value = "";
+                        });
 
                         document.getElementById('imagem-faixas').style.display = "";
                     }
