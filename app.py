@@ -24,6 +24,10 @@ def create_app(config_name: str = None):
     from views.calculadora import calculadora_bp
     app.register_blueprint(calculadora_bp, url_prefix='/calculadora')
 
+    # Responder dúvidas sobre água usando IA generativa
+    from views.questionsia import chatgpt_bp
+    app.register_blueprint(chatgpt_bp, url_prefix='/chatgpt')
+
     # Configuracao Flask
     app.config.from_object(config[config_name])
 
