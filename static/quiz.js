@@ -1,6 +1,6 @@
 window.onload = function () {
     $(document).ready(function() {
-        loadQuizData();
+        carregarDadosQuiz();
         // $("submit").click(loadQuiz());
 
         
@@ -20,7 +20,8 @@ window.onload = function () {
                 $(this).addClass('btn-danger');
             }
             
-            // loadQuiz();
+            
+            carregarQuiz();
 
             });
         });
@@ -66,18 +67,18 @@ window.onload = function () {
     };
 
 
-let quizData;
-let currentQuestion = 0;
-let score = 0;
-let difficulty = "Fácil";
+let dadosQuiz;
+let perguntaAtual = 0;
+let pontuacao = 0;
+let dificuldade = "Fácil";
 
-function loadQuizData() {
+function carregarDadosQuiz() {
     $.ajax({
         url: "/quiz",
         type: "POST",
         dataType: "json",
         success: function (data) {
-            quizData = data;
+            dadosQuiz = data;
         },
         error: function (xhr, status, error) {
             console.error(error);
@@ -85,53 +86,48 @@ function loadQuizData() {
     });
 }
 
-function loadQuiz() {
-    document.getElementById('submit').innerText = "Refazer "
-    console.log(currentQuestion);
-    console.log(currentQuizData);
+function carregarQuiz() {
+    const perguntaAtualQuiz = dadosQuiz[dificuldade][perguntaAtual];
 
-    const currentQuizData = quizData[difficulty][currentQuestion];
+    $("#pergunta").text(perguntaAtualQuiz.pergunta);
+    $("#opcoes").empty();
 
-
-    $("#question").text(currentQuizData.question);
-    $("#options").empty();
-
-    currentQuizData.options.forEach((option, index) => {
-        const li = $("<li>").text(option);
-        li.click(() => selectAnswer(index));
-        $("#options").append(li);
+    perguntaAtualQuiz.Opcoes.forEach((opcao, indice) => {
+        const li = $("<li>").text(opcao);
+        li.click(() => selecionarResposta(indice));
+        $("#opcoes").append(li);
     });
 }
 
-function selectAnswer(selectedIndex) {
-    const currentQuizData = quizData[difficulty][currentQuestion];
+function selecionarResposta(indiceSelecionado) {
+    const perguntaAtualQuiz = dadosQuiz[dificuldade][perguntaAtual];
 
-    if (selectedIndex === currentQuizData.correctAnswer) {
-        score++;
+    if (indiceSelecionado === perguntaAtualQuiz.respostaCorreta) {
+        pontuacao++;
     }
 
-    currentQuestion++;
+    perguntaAtual++;
 
-    if (currentQuestion < quizData[difficulty].length) {
-        loadQuiz();
+    if (perguntaAtual < dadosQuiz[dificuldade].length) {
+        carregarQuiz();
     } else {
-        showResults();
+        mostrarResultado();
     }
 }
 
-function showResults() {
+function mostrarResultado() {
     $("#quiz-container").html(`
-        <h2>You scored ${score}/${currentQuestion} correct answers.</h2>
-        <button onclick="location.reload()">Restart Quiz</button>
+        <h2>Você acertou ${pontuacao} de ${perguntaAtual} perguntas.</h2>
+        <button onclick="location.reload()">Reiniciar Quiz</button>
     `);
 }
 
-function changeDifficulty() {
-    const difficultySelect = $("#difficulty");
-    difficulty = difficultySelect.val();
-    currentQuestion = 0;
-    score = 0;
-    loadQuiz();
+function alterarDificuldade() {
+    const seletorDificuldade = $("#dificuldade");
+    dificuldade = seletorDificuldade.val();
+    perguntaAtual = 0;
+    pontuacao = 0;
+    carregarQuiz();
 }
 
 function sound_bubble(){

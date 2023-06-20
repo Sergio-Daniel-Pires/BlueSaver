@@ -4,7 +4,8 @@
     <script type="text/javascript" src="{{ url_for('static', filename='quiz.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/justgage@1.6.1/dist/justgage.min.js"></script>
-    <h1>Quiz</h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <h1>BlueSaver Quiz - Teste seu conhecimento sobre o uso responsável da água</h1>
     <hr>
 
     <audio id='bgsong' src="/static/sons/forest-river-with-whirls.mp3" autoplay loop>
@@ -17,9 +18,9 @@
 
     <br><br>
     <div id="quiz-container">
-        <h2 id="question"></h2>
-        <ul id="options"></ul>
-        <button class="submit" onclick="loadQuiz()" id="submit" >Iniciar</button>
+        <h2 id="pergunta"></h2>
+        <ul id="opcoes"></ul>
+        <button onclick="carregarQuiz()" id="submit" >Iniciar</button>
     </div>
 
     <br><br>
