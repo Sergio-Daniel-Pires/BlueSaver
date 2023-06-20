@@ -28,6 +28,10 @@ def create_app(config_name: str = None):
     from views.dicas import dicas_bp
     app.register_blueprint(dicas_bp, url_prefix='/dicas')
 
+    # Responder dúvidas sobre água usando IA generativa
+    from views.questionsia import chatgpt_bp
+    app.register_blueprint(chatgpt_bp, url_prefix='/chatgpt')
+
     # Configuracao Flask
     app.config.from_object(config[config_name])
 
