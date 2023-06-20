@@ -24,6 +24,10 @@ def create_app(config_name: str = None):
     from views.calculadora import calculadora_bp
     app.register_blueprint(calculadora_bp, url_prefix='/calculadora')
 
+    # Dicas para economizar agua
+    from views.dicas import dicas_bp
+    app.register_blueprint(dicas_bp, url_prefix='/dicas')
+
     # Configuracao Flask
     app.config.from_object(config[config_name])
 
