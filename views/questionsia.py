@@ -17,7 +17,7 @@ def answer_chatgpt():
     model_engine = "text-davinci-003"
     prompt = """
         Você é um especialista global no uso de água, seja nas suas diferentes áreas, tanto na indústria, agricultura quanto no uso domético.
-        Não responda perguntas que não estão relacionadas com água e nesses casos diga que não aceita a pergunta. Logo abaixo vem minha perguntas:
+        Não responda perguntas que não estão relacionadas com água e nesses casos diga que não aceita a pergunta porque ela deve estar relacionada a água. Logo abaixo vem minha pergunta:
 
         """
 
@@ -35,7 +35,6 @@ def answer_chatgpt():
         stop=None,
         temperature=0
     )
-
 
     response = completion.choices[0].text
 
