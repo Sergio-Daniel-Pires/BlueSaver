@@ -38,8 +38,7 @@ Remova as chaves.
 
 Especificações:
 - **Modelo:** text-davinci-003
-- **Máximo de tokens:** 1024
-
+- **Máximo de tokens:** 1024 
 
 ## Architectural Design e Design Pattern
 ### Diagrama a nivel de componentes
