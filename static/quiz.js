@@ -1,5 +1,11 @@
 window.onload = function () {
     $(document).ready(function() {
+        loadQuizData();
+        // getElementById('submit').addEventListener(loadQuiz());
+        //$("submit").click(loadQuiz());
+        $(document).on('click', '.submit', loadQuiz());
+
+        
         // Evento de clique nos botões de dificuldade
         $('.btn-dificuldade').click(function() {
             var dificuldade = $(this).data('dificuldade');
@@ -21,7 +27,6 @@ window.onload = function () {
                 type: 'POST',
                 data: { Dificuldade: dificuldade },
                 success: function(response) {
-                    loadQuiz();
                 }
             });
         });
@@ -67,61 +72,72 @@ window.onload = function () {
     });
 }
 
-const questionElement = document.getElementById("question");
-const optionsElement = document.getElementById("options");
-const submitButton = document.getElementById("submit");
-
+let quizData;
 let currentQuestion = 0;
 let score = 0;
-let difficulty = "easy"; // Set the default difficulty level
+let difficulty = "easy";
+
+function loadQuizData() {
+    $.ajax({
+        url: "/quiz",
+        type: "GET",
+        dataType: "json",
+        success: function (data) {
+            quizData = data;
+        },
+        error: function (xhr, status, error) {
+            console.error(error);
+        }
+    });
+}
 
 function loadQuiz() {
-    fetch("quizData.json")
-        .then(response => response.json())
-        .then(data => {
-            const currentQuizData = data[difficulty][currentQuestion];
+    document.getElementById('submit').innerText = "Refazer "
 
-            questionElement.innerText = currentQuizData.question;
-            optionsElement.innerHTML = "";
+    const currentQuizData = quizData[difficulty][currentQuestion];
+    console.log(currentQuestion);
+    console.log(currentQuizData);
 
-            currentQuizData.options.forEach((option, index) => {
-                const li = document.createElement("li");
-                li.innerText = option;
-                li.addEventListener("click", () => selectAnswer(index));
-                optionsElement.appendChild(li);
-            });
-        });
+    $("#question").text(currentQuizData.question);
+    $("#options").empty();
+
+    currentQuizData.options.forEach((option, index) => {
+        const li = $("<li>").text(option);
+        li.click(() => selectAnswer(index));
+        $("#options").append(li);
+    });
 }
 
 function selectAnswer(selectedIndex) {
-    fetch("quizData.json")
-        .then(response => response.json())
-        .then(data => {
-            const currentQuizData = data[difficulty][currentQuestion];
+    const currentQuizData = quizData[difficulty][currentQuestion];
 
-            if (selectedIndex === currentQuizData.correctAnswer) {
-                score++;
-            }
+    if (selectedIndex === currentQuizData.correctAnswer) {
+        score++;
+    }
 
-            currentQuestion++;
+    currentQuestion++;
 
-            if (currentQuestion < data[difficulty].length) {
-                loadQuiz();
-            } else {
-                showResults();
-            }
-        });
+    if (currentQuestion < quizData[difficulty].length) {
+        loadQuiz();
+    } else {
+        showResults();
+    }
 }
 
 function showResults() {
-    const quizContainer = document.getElementById("quiz-container");
-    quizContainer.innerHTML = `
-    <h2>You scored ${score}/${currentQuestion} correct answers.</h2>
-    <button onclick="location.reload()">Restart Quiz</button>
-  `;
+    $("#quiz-container").html(`
+        <h2>You scored ${score}/${currentQuestion} correct answers.</h2>
+        <button onclick="location.reload()">Restart Quiz</button>
+    `);
 }
 
-submitButton.addEventListener("click", loadQuiz);
+function changeDifficulty() {
+    const difficultySelect = $("#difficulty");
+    difficulty = difficultySelect.val();
+    currentQuestion = 0;
+    score = 0;
+    loadQuiz();
+}
 
 function sound_bubble(){
     if(!muted){

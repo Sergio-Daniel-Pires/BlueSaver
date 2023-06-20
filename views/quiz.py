@@ -1,4 +1,5 @@
 from flask import render_template, request, jsonify, current_app, make_response, Blueprint
+import os
 import json
 
 from utils.quiz_funcoes import escolher_perguntas, verifica_resposta
@@ -11,20 +12,17 @@ def generate_quiz():
         return make_response(render_template('quiz.html'), 200)
     
     elif request.method == "POST":
-    #     """
-    #     Preencha aqui a função 'receber quiz'
+        """
+        Preencha aqui a função 'receber quiz'
         
-    #     Essa função deve retornar as perguntas do quiz no formato JSON.
-    #     """
-    #     formulario = dict(request.form)
-    #     dificuldade = formulario.get('Dificuldade', None)
-    #     if dificuldade is None:
-    #         return "Dificuldade não pode ser vazia!", 400
+        Essa função deve retornar as perguntas do quiz no formato JSON.
+        """
 
-    #     STATIC = current_app.config['STATIC']
-    #     perguntas, _ = escolher_perguntas(dificuldade, STATIC)
-    #     return jsonify(perguntas)
-        return make_response(render_template('quiz.html'), 200)
+        STATIC = current_app.config['STATIC']
+        # perguntas, _ = escolher_perguntas(dificuldade, STATIC)
+        with open(os.path.join(STATIC, 'perguntas.json'), "r") as file:
+            perguntas = json.load(file)  
+        return jsonify(perguntas)
     
     
 # @quiz_bp.route('/responder', methods=['POST'])
