@@ -1,9 +1,7 @@
 window.onload = function () {
     $(document).ready(function() {
         loadQuizData();
-        // getElementById('submit').addEventListener(loadQuiz());
-        //$("submit").click(loadQuiz());
-        $(document).on('click', '.submit', loadQuiz());
+        // $("submit").click(loadQuiz());
 
         
         // Evento de clique nos botões de dificuldade
@@ -21,13 +19,9 @@ window.onload = function () {
             } else if (dificuldade === 'Difícil') {
                 $(this).addClass('btn-danger');
             }
+            
+            // loadQuiz();
 
-            $.ajax({
-                url: '/quiz',
-                type: 'POST',
-                data: { Dificuldade: dificuldade },
-                success: function(response) {
-                }
             });
         });
         // $('#verificar').click(function () {
@@ -69,18 +63,18 @@ window.onload = function () {
         //         }
         //     });
         // });
-    });
-}
+    };
+
 
 let quizData;
 let currentQuestion = 0;
 let score = 0;
-let difficulty = "easy";
+let difficulty = "Fácil";
 
 function loadQuizData() {
     $.ajax({
         url: "/quiz",
-        type: "GET",
+        type: "POST",
         dataType: "json",
         success: function (data) {
             quizData = data;
@@ -93,10 +87,11 @@ function loadQuizData() {
 
 function loadQuiz() {
     document.getElementById('submit').innerText = "Refazer "
-
-    const currentQuizData = quizData[difficulty][currentQuestion];
     console.log(currentQuestion);
     console.log(currentQuizData);
+
+    const currentQuizData = quizData[difficulty][currentQuestion];
+
 
     $("#question").text(currentQuizData.question);
     $("#options").empty();
