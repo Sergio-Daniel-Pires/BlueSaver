@@ -9,9 +9,6 @@ function sendMessage() {
     $('#chat-log').append(`<p><strong>Você:</strong> ${userInput}</p>`);
     
     // Fazer requisição para a API do chatGPT através do backend
-    const myDict = {};
-    myDict["Pergunta"] = "dwsdw";
-
     $.ajax({
         url: '/chatgpt/responder',
         type: 'POST',
@@ -20,8 +17,6 @@ function sendMessage() {
     //    'Authorization': 'Bearer YOUR_API_KEY'
         },
         data: JSON.stringify({ input: userInput }),
-        //data: { input: userInput },
-        //data: myDict,
         success: function(responseData) {
         const generatedResponse = responseData["Resposta"];
         // Mostrar resposta gerada
