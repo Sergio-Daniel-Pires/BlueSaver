@@ -229,5 +229,6 @@ function mute_all(){
 
 function setVolume(value) {
     var audio = document.getElementById("bgsong");
+    audioBackground.volume = value / 100;
     audio.volume = value / 100;
   }

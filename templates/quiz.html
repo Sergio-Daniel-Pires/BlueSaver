@@ -10,13 +10,14 @@
     <h2 style="font-size: 1.5rem;">Teste seu conhecimento sobre o uso responsável da água</h2>
     <hr>
 
+    <p>Volume do som de fundo: </p>
     <audio id='bgsong' src="/static/sons/forest-river-with-whirls.mp3" loop>
         <p>Your browser does not support the audio element.</p>
     </audio>
 
     <input type="range" id = "volumeslider" min="0" max="100" step="1" value="100" onchange="setVolume(this.value)" oninput="setVolume(this.value)"/>
     <br><br>
-    <button id="mutar" class="button" onclick="mute_all()">Ativar/desativar efeitos sonoros</button>
+    <button id="mutar" class="button" onclick="mute_all()">Ativar/desativar efeitos sonoros e música</button>
 
     <br><br>
     <label for="dificuldade">Selecione a dificuldade:</label><br>
@@ -33,7 +34,7 @@
     <div id="quiz-container">
         <h3 id="pergunta"></h3>
         <ul id="opcoes"></ul>
-        <button id="submit" class='button' onclick="carregarQuiz()"  >Iniciar</button>
+        <button id="submit" class='button' onclick="carregarQuiz();sound_bubble()"  >Iniciar</button>
     </div>
     <br><br>
 
