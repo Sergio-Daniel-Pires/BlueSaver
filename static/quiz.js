@@ -62,9 +62,18 @@ function selecionarResposta(indiceSelecionado) {
     const perguntaAtualQuiz = dadosQuiz[dificuldade][indicePerguntaAtual];
     indicePerguntaAtual++;
 
+    // Desabilitar as opções de resposta, exceto a selecionada
+    $(".opcao").each(function (indice) {
+        if (indice !== indiceSelecionado) {
+            $(this).addClass("opcao-desativada");
+        }
+    });
+
     if (indiceSelecionado === perguntaAtualQuiz.Correta) {
         pontuacao++;
-        mostrarResultadoParcial(true); // Mostra o resultado parcial a cada pergunta respondida
+        mostrarResultadoParcial(true);
+    } else{
+        mostrarResultadoParcial(false);
     }
 
     const opcoes = $("#opcoes").find("li");
@@ -74,7 +83,12 @@ function selecionarResposta(indiceSelecionado) {
     opcoes.eq(indiceSelecionado).addClass("opcao-selecionada");
 
     if (indicePerguntaAtual < dadosQuiz[dificuldade].length) {
-        setTimeout(carregarQuiz, 2000); // Atraso de meio segundo antes de carregar a próxima pergunta para exibir a animação de clique
+        setTimeout(() => {
+            carregarQuiz();
+
+            // Habilitar todas as opções de resposta novamente
+            $(".opcao").removeClass("opcao-desativada");
+        }, 1000);
     } else {
         mostrarResultadoFinal();
     }
@@ -85,9 +99,7 @@ function mostrarResultadoParcial(usuarioAcertou) {
 
     if (resultadoParcial.length) {
         // O elemento já existe, atualize seu conteúdo
-        resultadoParcial.html(`
-            <h2>Resultado Parcial:</h2>
-            <div class="water-container">
+        $("#water-container").append(`
                 ${getWaterDropsHTML(usuarioAcertou)}
             </div>
         `);
@@ -95,8 +107,9 @@ function mostrarResultadoParcial(usuarioAcertou) {
         // O elemento ainda não existe, adicione-o
         $("#quiz-container").append(`
             <div id="resultado-parcial">
-                <h2>Resultado Parcial:</h2>
-                <div class="water-container">
+                <h2>Seus acertos até agora :)</h2>
+                <h3 style="font-size: 1.5rem;">Pergunta ${indicePerguntaAtual}/${dadosQuiz[dificuldade].length}</h3>
+                <div class="water-container" id="water-container">
                     ${getWaterDropsHTML(usuarioAcertou)}
                 </div>
             </div>
@@ -106,22 +119,20 @@ function mostrarResultadoParcial(usuarioAcertou) {
 
 function getWaterDropsHTML(usuarioAcertou) {
     const totalDrops = dadosQuiz[dificuldade].length; // Número total de gotas d'água
-    const correctAnswers = []; // Array para armazenar os índices das respostas corretas
-
-    for (let i = 0; i < indicePerguntaAtual; i++) {
-        if (usuarioAcertou) {
-            correctAnswers.push(i);
-        }
-    }
-
     let dropsHTML = "";
-    for (let i = 0; i < totalDrops; i++) {
-        if (correctAnswers.includes(i)) {
-            dropsHTML += '<i class="fas fa-tint filled-drop" style="color: blue;"></i>';
-        } else {
-            dropsHTML += '<i class="fas fa-tint empty-drop"></i>';
+    
+    if (indicePerguntaAtual === 1) // Caso seja a primeira pergunta, gera todas as gotas para checagem do progresso do quiz
+        for (let i = 0; i < totalDrops; i++) {
+            let dropColor = i < indicePerguntaAtual && usuarioAcertou ? "blue" : "black";
+            const dropId = "drop" + i;
+            dropsHTML += `<i class="fas fa-tint" id=${dropId} style="color: ${dropColor};"></i>`;
         }
-    }
+    else { 
+        if (usuarioAcertou){ // Apenas alterar a gota correspondente à questão respondida
+            let dropColor = "blue";
+            $("#" + "drop" + (indicePerguntaAtual - 1)).css("color", dropColor);
+            }
+        }
 
     return dropsHTML;
 }

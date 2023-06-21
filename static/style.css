@@ -39,8 +39,13 @@
 }
 
 .opcao-selecionada {
-    background-color: #1f75ff; 
-    color: white;
+    background-color: #1f75ff !important; /* !important para sobrepor o ':hover' */
+    color: white !important;
+}
+
+.opcao-desativada {
+    pointer-events: none; /* Impede que as opções de resposta sejam clicadas */
+    opacity: 0.6; /* Reduz a opacidade das opções de resposta desativadas*/
 }
 
 .button {
