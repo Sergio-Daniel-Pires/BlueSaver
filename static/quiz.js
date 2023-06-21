@@ -19,7 +19,7 @@ window.onload = function () {
             }
 
             // Reseta os dados caso seja reiniciado o quiz de outra forma além do botão 'reiniciar'
-            perguntaAtual = 0;
+            indicePerguntaAtual = 0;
             pontuacao = 0;
             carregarQuiz();
         });
@@ -27,7 +27,7 @@ window.onload = function () {
 };
 
 let dadosQuiz;
-let perguntaAtual = 0;
+let indicePerguntaAtual = 0;
 let pontuacao = 0;
 let dificuldade = "Fácil";
 
@@ -46,7 +46,7 @@ function carregarDadosQuiz() {
 }
 
 function carregarQuiz() {
-    const perguntaAtualQuiz = dadosQuiz[dificuldade][perguntaAtual];
+    const perguntaAtualQuiz = dadosQuiz[dificuldade][indicePerguntaAtual];
 
     $("#pergunta").text(perguntaAtualQuiz.Pergunta);
     $("#opcoes").empty();
@@ -59,84 +59,85 @@ function carregarQuiz() {
 }
 
 function selecionarResposta(indiceSelecionado) {
-    const perguntaAtualQuiz = dadosQuiz[dificuldade][perguntaAtual];
+    const perguntaAtualQuiz = dadosQuiz[dificuldade][indicePerguntaAtual];
+    indicePerguntaAtual++;
 
     if (indiceSelecionado === perguntaAtualQuiz.Correta) {
         pontuacao++;
+        mostrarResultadoParcial(true); // Mostra o resultado parcial a cada pergunta respondida
     }
 
-    perguntaAtual++;
 
-    mostrarResultadoParcial(); // Mostra o resultado parcial a cada pergunta respondida
 
-    if (perguntaAtual < dadosQuiz[dificuldade].length) {
+    if (indicePerguntaAtual < dadosQuiz[dificuldade].length) {
         carregarQuiz();
     } else {
         mostrarResultadoFinal();
     }
 }
 
-function mostrarResultadoParcial() {
-    const porcentagemAcertos = (pontuacao / perguntaAtual) * 100;
-    let label = "Parabéns!";
-    if (porcentagemAcertos <= 50) {
-        label = "Estude mais!";
-    }
-
-    const gauge = new JustGage({
-        id: "gaugeParcial",
-        value: porcentagemAcertos,
-        min: 0,
-        max: 100,
-        title: "Porcentagem de Acertos",
-        label: label,
-        gaugeWidthScale: 0.6,
-        counter: true,
-        relativeGaugeSize: true,
-        levelColors: ["#ff0000", "#ffa500", "#6ab04c"], // Cores para diferentes níveis (opcional)
-        levelColorsGradient: false, // Gradiente entre as cores (opcional)
-        startAnimationType: "bounce",
-        startAnimationTime: 2000,
-        refreshAnimationType: "bounce",
-        refreshAnimationTime: 1000
-    });
-
+function mostrarResultadoParcial(usuarioAcertou) {
     const resultadoParcial = $("#resultado-parcial");
 
     if (resultadoParcial.length) {
         // O elemento já existe, atualize seu conteúdo
         resultadoParcial.html(`
             <h2>Resultado Parcial:</h2>
-            <div id="gauge"></div>
+            <div class="water-container">
+                ${getWaterDropsHTML(usuarioAcertou)}
+            </div>
         `);
     } else {
         // O elemento ainda não existe, adicione-o
         $("#quiz-container").append(`
             <div id="resultado-parcial">
                 <h2>Resultado Parcial:</h2>
-                <div id="gauge"></div>
+                <div class="water-container">
+                    ${getWaterDropsHTML(usuarioAcertou)}
+                </div>
             </div>
         `);
     }
+}
+
+function getWaterDropsHTML(usuarioAcertou) {
+    const totalDrops = dadosQuiz[dificuldade].length; // Número total de gotas d'água
+    const correctAnswers = []; // Array para armazenar os índices das respostas corretas
+
+    for (let i = 0; i < indicePerguntaAtual; i++) {
+        if (usuarioAcertou) {
+            correctAnswers.push(i);
+        }
+    }
+
+    let dropsHTML = "";
+    for (let i = 0; i < totalDrops; i++) {
+        if (correctAnswers.includes(i)) {
+            dropsHTML += '<i class="fas fa-tint filled-drop" style="color: blue;"></i>';
+        } else {
+            dropsHTML += '<i class="fas fa-tint empty-drop"></i>';
+        }
+    }
+
+    return dropsHTML;
 }
 
 function mostrarResultadoFinal() {
     sound_piano();
 
     $("#quiz-container").html(`
-        <h2> Você acertou ${pontuacao} de ${perguntaAtual} perguntas.</h2>
+        <h2> Você acertou ${pontuacao} de ${indicePerguntaAtual} perguntas.</h2>
         <button class='button' onclick="location.reload()">Reiniciar Quiz</button>
     `);
 
-    let porcentagemAcertos = (pontuacao / perguntaAtual) * 100;
+    let porcentagemAcertos = (pontuacao / indicePerguntaAtual) * 100;
     let label = "Parabens!"
     if (porcentagemAcertos <= 50) {
         label = "Estude mais!";
         }
 
-    // document.getElementById("gauge").innerHTML = '';
     $("#resultado").html(`
-        <h4>Resultado Final:</h4>
+        <h4>Resultado:</h4>
         <div id="gaugeFinal"></div>
     `);
 

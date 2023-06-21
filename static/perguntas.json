@@ -11,7 +11,7 @@
             "Correta": 2
         },
         {
-            "Pergunta": "O uso de água potável está estável, aumentando ou diminuindo com o tempo?",
+            "Pergunta": "O consumo de água potável está estável, aumentando ou diminuindo com o tempo?",
             "Opcoes": ["Diminuindo", "Estável", "Aumentando"],
             "Correta": 2
         }
@@ -29,7 +29,7 @@
             "Correta": 2
         },
         {
-            "Pergunta": "O uso de água potável está estável, aumentando ou diminuindo com o tempo?",
+            "Pergunta": "O consumo de água potável está estável, aumentando ou diminuindo com o tempo?",
             "Opcoes": ["Diminuindo", "Estável", "Aumentando"],
             "Correta": 2
         },
