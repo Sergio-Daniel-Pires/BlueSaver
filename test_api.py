@@ -8,37 +8,22 @@ def test_read_main_should_return_status_200():
 
 def test_verify_route_quiz_gerar():
     with app_.test_client() as client:
-        response = client.post("/quiz/", data={'Dificuldade': 'Fácil'})
+        response = client.post("/quiz/gerar", data={'Dificuldade': 'Fácil'})
     
     assert response.status_code == 200
 
 def test_verify_route_quiz_responder():
     with app_.test_client() as client:
-        response = client.post("/quiz/", data={
+        response = client.post("/quiz/responder", data={
             'Dificuldade': 'Fácil',
-            '1': 'a',
-            '2': 'b',
-            '3': 'c',
-            '4': 'd'
+            'Resposta 1': 'a',
+            'Resposta 2': 'b',
+            'Resposta 3': 'c',
+            'Resposta 4': 'd'
             })
     assert response.status_code == 200
     
 def test_graphic_route_exists():
     with app_.test_client() as client:
-        response = client.get("/graficos/")
-    assert response.status_code == 200
-
-def test_verify_route_graphic_8_years():
-    with app_.test_client() as client:
-        response = client.get("/graficos/8_old")
-    assert response.status_code == 200
-
-def test_verify_route_graphic_9_15_years():
-    with app_.test_client() as client:
-        response = client.get("/graficos/between_9_and_15")
-    assert response.status_code == 200
-
-def test_verify_route_graphic_16_years():
-    with app_.test_client() as client:
-        response = client.get("/graficos/up_to_16")
+        response = client.post("/graficos/visualizar", data={"Idade": "Até 8 anos!"})
     assert response.status_code == 200
