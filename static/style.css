@@ -22,6 +22,27 @@
     font-size: 24px;
 }
 
+.opcao {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.opcao:hover {
+    background-color: #90bbff;
+}
+
+.opcao:active {
+    background-color: #1f75ff;
+}
+
+.opcao-selecionada {
+    background-color: #1f75ff; 
+    color: white;
+}
+
 .button {
     background-color: #424242;
     padding: .5em;

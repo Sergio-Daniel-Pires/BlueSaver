@@ -52,7 +52,7 @@ function carregarQuiz() {
     $("#opcoes").empty();
 
     perguntaAtualQuiz.Opcoes.forEach((opcao, indice) => {
-        const li = $("<li>").text(opcao);
+        const li = $("<li>").text(opcao).addClass("opcao");
         li.click(() => selecionarResposta(indice));
         $("#opcoes").append(li);
     });
@@ -67,10 +67,14 @@ function selecionarResposta(indiceSelecionado) {
         mostrarResultadoParcial(true); // Mostra o resultado parcial a cada pergunta respondida
     }
 
+    const opcoes = $("#opcoes").find("li");
+    opcoes.removeClass("opcao-selecionada"); // Remove a classe de todas as opções
 
+    // Adiciona a classe de "opcao-selecionada" apenas na opção selecionada
+    opcoes.eq(indiceSelecionado).addClass("opcao-selecionada");
 
     if (indicePerguntaAtual < dadosQuiz[dificuldade].length) {
-        carregarQuiz();
+        setTimeout(carregarQuiz, 2000); // Atraso de meio segundo antes de carregar a próxima pergunta para exibir a animação de clique
     } else {
         mostrarResultadoFinal();
     }
