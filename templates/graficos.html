@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+    <script type="text/javascript" src="{{ url_for('static', filename='graphics.js') }}"></script>
+    <h1 class="mt-4">Bem vindo ao projeto BlueSaver!</h1>
+    <hr>
+    <div class="form-group">
+        <label for="idade">Selecione a idade:</label>
+        <select class="form-control" id="idade">
+            <option value="">Selecione</option>
+            <option value="8_old">Até 8 anos</option>
+            <option value="between_9_and_15">Entre 9 e 15 anos</option>
+            <option value="up_to_16">16 anos</option>
+        </select>
+    </div>
+    <div id="imagem-container" class="mt-4">
+        <!-- Aqui será renderizado o iframe com a imagem -->
+    </div>
+{% endblock %}  
