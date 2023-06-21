@@ -6,7 +6,7 @@ window.onload = function () {
         
         // Evento de clique nos botões de dificuldade
         $('.btn-dificuldade').click(function() {
-            var dificuldade = $(this).data('dificuldade');
+            dificuldade = $(this).data('dificuldade');
 
             // Remove todas as classes de cor dos botões de dificuldade
             $('.btn-dificuldade').removeClass('btn-success btn-warning btn-danger');
@@ -20,51 +20,13 @@ window.onload = function () {
                 $(this).addClass('btn-danger');
             }
             
-            
+            // Reseta os dados caso seja reiniciado o quiz de outra forma além do botão 'reiniciar'""
+            perguntaAtual = 0;
+            pontuacao = 0;
             carregarQuiz();
-
-            });
         });
-        // $('#verificar').click(function () {
-        //     send = {};
-        //     send['Dificuldade'] = dificuldade;
-        //     send['Resposta'] = JSON.stringify(respostas);
-
-        //     $.ajax({
-        //         url: '/quiz/responder',
-        //         type: 'POST',
-        //         data: send,
-        //         success: function (response) {
-        //             // Exibir o resultado das respostas
-        //             acertos = response['resultado']['acertos'];
-        //             total = response['resultado']['total'];
-        //             var porcentagemAcertos = (acertos / total) * 100;
-        //             var label = "Parabens!";
-        //             if (porcentagemAcertos < 50){
-        //                 label = "Estude mais!";
-        //             } 
-
-        //             var gauge = new JustGage({
-        //                 id: "gauge",
-        //                 value: porcentagemAcertos,
-        //                 min: 0,
-        //                 max: 100,
-        //                 title: "Porcentagem de Acertos",
-        //                 label: label,
-        //                 gaugeWidthScale: 0.6,
-        //                 counter: true,
-        //                 relativeGaugeSize: true,
-        //                 levelColors: ["#ff0000", "#ffa500", "#6ab04c"], // Cores para diferentes níveis (opcional)
-        //                 levelColorsGradient: false, // Gradiente entre as cores (opcional)
-        //                 startAnimationType: "bounce",
-        //                 startAnimationTime: 2000,
-        //                 refreshAnimationType: "bounce",
-        //                 refreshAnimationTime: 1000
-        //             });
-        //         }
-        //     });
-        // });
-    };
+    });
+};
 
 
 let dadosQuiz;
@@ -117,18 +79,36 @@ function selecionarResposta(indiceSelecionado) {
 
 function mostrarResultado() {
     $("#quiz-container").html(`
-        <h2>Você acertou ${pontuacao} de ${perguntaAtual} perguntas.</h2>
-        <button onclick="location.reload()">Reiniciar Quiz</button>
+        <h2> Você acertou ${pontuacao} de ${perguntaAtual} perguntas.</h2>
+        <button class='button' onclick="location.reload()">Reiniciar Quiz</button>
     `);
+
+    let porcentagemAcertos = (pontuacao / perguntaAtual) * 100;
+    let label = "Parabens! Você sabe muito sobre o consumo de água"
+    if (porcentagemAcertos < 50) {
+        let label = "Estude mais!";
+    }
+
+    var gauge = new JustGage({
+        id: "gauge",
+        value: porcentagemAcertos,
+        min: 0,
+        max: 100,
+        title: "Porcentagem de Acertos",
+        label: label,
+        gaugeWidthScale: 0.6,
+        counter: true,
+        relativeGaugeSize: true,
+        levelColors: ["#ff0000", "#ffa500", "#6ab04c"], // Cores para diferentes níveis (opcional)
+        levelColorsGradient: false, // Gradiente entre as cores (opcional)
+        startAnimationType: "bounce",
+        startAnimationTime: 2000,
+        refreshAnimationType: "bounce",
+        refreshAnimationTime: 1000
+    });
+
 }
 
-function alterarDificuldade() {
-    const seletorDificuldade = $("#dificuldade");
-    dificuldade = seletorDificuldade.val();
-    perguntaAtual = 0;
-    pontuacao = 0;
-    carregarQuiz();
-}
 
 function sound_bubble(){
     if(!muted){
