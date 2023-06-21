@@ -1,61 +1,124 @@
 {
-    "Fácil": [
-        {
-            "Pergunta": "Qual atividade utiliza mais água no dia a dia dentro de casa?",
-            "Opcoes": ["Descarga da privada", "Banho", "Lavar roupa", "lavar a louça"],
-            "Correta": 0
+    "Fácil": {
+        "q1": {
+            "Pergunta": "1) F:Qual a fórmula da água?",
+            "Opcoes": {
+                "a": "H2O",
+                "b": "NaCl",
+                "c": "CaO"
+            },
+            "Correta": "a"
         },
-        {
+        "q2":{
             "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
-            "Opcoes": ["3%", "2,5%", "1%"],
-            "Correta": 2
+            "Opcoes": {
+                "a": "3%",
+                "b": "2,5%",
+                "c": "1%"
+            },
+            "Correta": "c"
         },
-        {
-            "Pergunta": "O consumo de água potável está estável, aumentando ou diminuindo com o tempo?",
-            "Opcoes": ["Diminuindo", "Estável", "Aumentando"],
-            "Correta": 2
+        "q3": {
+            "Pergunta": "Qual a área fonte da maior parte do gasto de água potável do mundo?",
+            "Opcoes": {
+                "a": "Indústria",
+                "b": "Agropecuária",
+                "c": "Doméstico e comercial"
+            },
+            "Correta": "b"
+        },
+        "q4": {
+            "Pergunta": "Qual o país que mais retira água para uso industrial do mundo?",
+            "Opcoes": {
+                "a": "China",
+                "b": "Índia",
+                "c": "EUA"
+            },
+            "Correta": "c"
         }
-    ],
+        
+    },
 
-    "Médio": [
-        {
-            "Pergunta": "Qual atividade utiliza mais água no dia a dia dentro de casa?",
-            "Opcoes": ["Descarga da privada", "Banho", "Lavar roupa", "lavar a louça"],
-            "Correta": 0
+    "Médio":{
+        "q1": {
+            "Pergunta": "M:Qual a formula da agua?",
+            "Opcoes": {
+                "a": "H2O",
+                "b": "NaCl",
+                "c": "CaO"
+            },
+            "Correta": "a"
         },
-        {
+        "q2": {
             "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
-            "Opcoes": ["3%", "2,5%", "1%"],
-            "Correta": 2
+            "Opcoes": {
+                "a": "3%",
+                "b": "2,5%",
+                "c": "1%"
+            },
+            "Correta": "c"
         },
-        {
-            "Pergunta": "O consumo de água potável está estável, aumentando ou diminuindo com o tempo?",
-            "Opcoes": ["Diminuindo", "Estável", "Aumentando"],
-            "Correta": 2
+        "q3": {
+            "Pergunta": "Qual a área fonte da maior parte do gasto de água potável do mundo?",
+            "Opcoes": {
+                "a": "Indústria",
+                "b": "Agropecuária",
+                "c": "Doméstico e comercial"
+            },
+            "Correta": "b"
         }
-    ],
-
-    "Difícil": [
-        {
-            "Pergunta": "O que é água virtual?",
-            "Opcoes": [
-                "Água usada em simulações de realidade virtual",
-                "Água usada para armazenamento de dados digitais",
-                "Água necessária para produzir bens e serviços",
-                "Água usada em jogos online"
-            ],
-            "Correta": 2
+        ,
+        "q4": {
+            "Pergunta": "O uso de água potável está estável, aumentando ou diminuindo com o tempo?",
+            "Opcoes": {
+                "a": "Diminuindo",
+                "b": "Estável",
+                "c": "Aumentando"
+            },
+            "Correta": "c"
+        }
+        
+    },
+    
+    "Difícil":{
+        "q1": {
+            "Pergunta": "D:Qual a formula da agua?",
+            "Opcoes": {
+                "a": "H2O",
+                "b": "NaCl",
+                "c": "CaO"
+            },
+            "Correta": "a"
         },
-        {
-            "Pergunta": "O que é pegada hídrica?",
-            "Opcoes": [
-                "A marca deixada pela água em superfícies",
-                "A quantidade de água necessária para cultivar uma safra específica",
-                "O som das gotas de água",
-                "A taxa na qual a água evapora"
-            ],
-            "Correta": 1
+        "q2": {
+            "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
+            "Opcoes": {
+                "a": "3%",
+                "b": "2,5%",
+                "c": "1%"
+            },  
+            "Correta": "c"
+        },
+        "q3": {
+            "Pergunta": "Qual a área fonte da maior parte do gasto de água potável do mundo?",
+            "Opcoes": {
+                "a": "Indústria",
+                "b": "Agropecuária",
+                "c": "Doméstico e comercial"
+            },
+            "Correta": "b"
+        },
+        "q4": {
+            "Pergunta": "Qual a região que mais usa água potável per capita?",
+            "Opcoes": {
+                "a": "América do Norte",
+                "b": "América do Sul",
+                "c": "Europa"
+            },
+            "Correta": "b"
         }
-    ]
+        
+    }
+    
 }
 
