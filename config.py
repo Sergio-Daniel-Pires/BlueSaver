@@ -10,7 +10,7 @@ class DevelopConfig(BaseConfig):
     DEBUG = True
 
 class ProdConfig(BaseConfig):
-    DEBUG = True
+    DEBUG = False
 
 config = {
     "development": DevelopConfig,

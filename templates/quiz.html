@@ -4,6 +4,7 @@
     <script type="text/javascript" src="{{ url_for('static', filename='quiz.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/justgage@1.6.1/dist/justgage.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='fullscreen.js') }}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <div style="line-height:150%;"> <br> </div>
     <h1 style="font-weight: bold;">BlueSaver Quiz<br></h1>
@@ -14,7 +15,6 @@
     <audio id='bgsong' src="/static/sons/forest-river-with-whirls.mp3" loop>
         <p>Your browser does not support the audio element.</p>
     </audio>
-
     <input type="range" id = "volumeslider" min="0" max="100" step="1" value="100" onchange="setVolume(this.value)" oninput="setVolume(this.value)"/>
     <br><br>
     <button id="mutar" class="button" onclick="mute_all()">Ativar/desativar efeitos sonoros e música</button>

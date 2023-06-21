@@ -24,6 +24,22 @@ python3 -m flask --app app run
 localhost:5000
 ```
 
+## Uso do ChatGPT
+Para usar a funcionalidade do chatGPT é necessário ter uma **chave privada da API da OpenAI**.
+Acesse:
+- https://platform.openai.com/account/api-keys
+
+Depois, configure nas suas variáveis de ambiente sua chave privada. Isso pode ser feito da seguinte forma em um ambiente Linux:  
+```
+export OPENAI_API_KEY={Coloque sua chave aqui}
+```
+
+Remova as chaves.
+
+Especificações:
+- **Modelo:** text-davinci-003
+- **Máximo de tokens:** 1024 
+
 ## Architectural Design e Design Pattern
 ### Diagrama a nivel de componentes
 !['Diagrama'](static/diagrama.png)

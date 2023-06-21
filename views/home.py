@@ -1,4 +1,4 @@
-from flask import render_template, make_response, Blueprint
+from flask import render_template, make_response, Blueprint, current_app
 
 home_bp = Blueprint('home', __name__)
 

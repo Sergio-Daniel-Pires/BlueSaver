@@ -2,6 +2,7 @@ from pymongo import MongoClient
 from abc import abstractmethod, ABC
 import os
 import pandas
+import json
 
 class Data(ABC):
     name: str
@@ -20,6 +21,15 @@ class Data(ABC):
         """
         ...
 
+    @abstractmethod
+    def get_all_hints(self) -> dict:
+        """
+        Get all hints for water
+
+        :return: Return all hints as dict
+        :rtype: dict
+        """
+
 class DataMongoDB(Data):
     def __init__(self):
         super().__init__()
@@ -34,6 +44,9 @@ class DataMongoDB(Data):
             return data_document['data']
         else:
             return None
+        
+    def get_all_hints(self) -> dict:
+        raise Exception("Not implemented")
 
 class DataLocal(Data):
     def __init__(self):
@@ -47,6 +60,10 @@ class DataLocal(Data):
             return [raw_values.columns.tolist()] + raw_values.values.tolist()
         else:
             return None
+        
+    def get_all_hints(self) -> dict:
+        all_hints = json.load(open('static/dicas.json', 'r'))
+        return all_hints
 
 class DataFactory:
     @staticmethod
