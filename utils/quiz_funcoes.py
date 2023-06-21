@@ -26,8 +26,8 @@ def escolher_perguntas(dificuldade: str, arquivos_estaticos: str) -> dict:
 
     for questao in nivel:
         new_dict = {
-            'Pergunta': nivel[questao]['Pergunta'],
-            'Opcoes': nivel[questao]['Opcoes']
+            'Pergunta': nivel['Pergunta'],
+            'Opcoes': nivel['Opcoes']
         }
         result[questao] = new_dict
 

@@ -29,6 +29,49 @@
     font-size: 24px;
 }
 
+.opcao {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.opcao:hover {
+    background-color: #90bbff;
+}
+
+.opcao:active {
+    background-color: #1f75ff;
+}
+
+.opcao-selecionada {
+    background-color: #1f75ff !important; /* !important para sobrepor o ':hover' */
+    color: white !important;
+}
+
+.opcao-desativada {
+    pointer-events: none; /* Impede que as opções de resposta sejam clicadas */
+    opacity: 0.6; /* Reduz a opacidade das opções de resposta desativadas*/
+}
+
+.button {
+    background-color: #424242;
+    padding: .5em;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 6px;
+    color: #fff;
+    font-family: 'Oswald';
+    font-size: 15px;
+    text-decoration: none;
+    border: none;
+   }
+.button:hover {
+    border: none;
+    background: rgb(248, 192, 89);
+    box-shadow: 0px 0px 1px #777;
+   }
 .div_vazia{
     height: 320px;
     display: block;

@@ -1,18 +1,15 @@
 {% extends "base.html" %}
 {% block content %}
 <script type="text/javascript" src="{{ url_for('static', filename='dicas.js') }}"></script>
-<h1>Dicas para economizar água!</h1>
+<h1 style="padding-top: 20px;">Dicas para economizar água!</h1>
 <div class="column">
     <div class="subdivision facil">
-        <h2>Fácil</h2>
         <div id="facil" class="items"></div>
     </div>
     <div class="subdivision medio">
-        <h2>Médio</h2>
         <div id="medio" class="items"></div>
     </div>
     <div class="subdivision dificil">
-        <h2>Difícil</h2>
         <div id="dificil" class="items"></div>
     </div>
 </div>
