@@ -18,8 +18,16 @@ def test_gerar_dificulty_hard(static):
     output = escolher_perguntas("Difícil", static)
     assert output[1] == 200
 
+def test_gerar_dificulty_hard(static):
+    output = escolher_perguntas("Difíci", static)
+    assert output[1] == 400
+
+def test_gerar_dificulty_hard(static):
+    output = escolher_perguntas("difícil", static)
+    assert output[1] == 400
+
 def test_gerar_invalid_dificulty(static):
-    output = escolher_perguntas("Super Hard", static)
+    output = escolher_perguntas("Muito Difícil", static)
     assert output[1] == 400
 
 def test_empty_quiz_difficulty():
