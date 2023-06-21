@@ -14,7 +14,7 @@ def test_verify_route_quiz_gerar():
 
 def test_verify_route_quiz_responder():
     with app_.test_client() as client:
-        response = client.post("/quiz/responder", data={
+        response = client.post("/quiz/", data={
             'Dificuldade': 'Fácil',
             '1': 'a',
             '2': 'b',
