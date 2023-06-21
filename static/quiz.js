@@ -56,6 +56,9 @@ function carregarQuiz() {
         li.click(() => selecionarResposta(indice));
         $("#opcoes").append(li);
     });
+
+    // Atualizar o indicador de pergunta respondida
+    $("#resultado-parcial h3").html(`Pergunta ${indicePerguntaAtual}/${dadosQuiz[dificuldade].length}`);
 }
 
 function selecionarResposta(indiceSelecionado) {
