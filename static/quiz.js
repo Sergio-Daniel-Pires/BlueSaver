@@ -1,11 +1,9 @@
 window.onload = function () {
-    $(document).ready(function() {
+    $(document).ready(function () {
         carregarDadosQuiz();
-        // $("submit").click(loadQuiz());
 
-        
         // Evento de clique nos botões de dificuldade
-        $('.btn-dificuldade').click(function() {
+        $('.btn-dificuldade').click(function () {
             dificuldade = $(this).data('dificuldade');
 
             // Remove todas as classes de cor dos botões de dificuldade
@@ -19,15 +17,14 @@ window.onload = function () {
             } else if (dificuldade === 'Difícil') {
                 $(this).addClass('btn-danger');
             }
-            
-            // Reseta os dados caso seja reiniciado o quiz de outra forma além do botão 'reiniciar'""
+
+            // Reseta os dados caso seja reiniciado o quiz de outra forma além do botão 'reiniciar'
             perguntaAtual = 0;
             pontuacao = 0;
             carregarQuiz();
         });
     });
 };
-
 
 let dadosQuiz;
 let perguntaAtual = 0;
@@ -68,27 +65,61 @@ function selecionarResposta(indiceSelecionado) {
         pontuacao++;
     }
 
+    mostrarResultadoParcial(); // Mostra o resultado parcial a cada pergunta respondida
+
     perguntaAtual++;
 
     if (perguntaAtual < dadosQuiz[dificuldade].length) {
         carregarQuiz();
     } else {
-        mostrarResultado();
+        mostrarResultadoFinal();
     }
 }
 
-function mostrarResultado() {
+function mostrarResultadoParcial() {
+    const porcentagemAcertos = (pontuacao / perguntaAtual) * 100;
+    let label = "Parabéns!";
+    if (porcentagemAcertos <= 50) {
+        label = "Estude mais!";
+    }
+
+    $("#resultado").html(`
+        <h4>Resultado Parcial:</h4>
+        <div id="gaugeParcial"></div>
+    `);
+
+    const gauge = new JustGage({
+        id: "gaugeParcial",
+        value: porcentagemAcertos,
+        min: 0,
+        max: 100,
+        title: "Porcentagem de Acertos",
+        label: label,
+        gaugeWidthScale: 0.6,
+        counter: true,
+        relativeGaugeSize: true,
+        levelColors: ["#ff0000", "#ffa500", "#6ab04c"], // Cores para diferentes níveis (opcional)
+        levelColorsGradient: false, // Gradiente entre as cores (opcional)
+        startAnimationType: "bounce",
+        startAnimationTime: 2000,
+        refreshAnimationType: "bounce",
+        refreshAnimationTime: 1000
+    });
+}
+
+function mostrarResultadoFinal() {
     $("#quiz-container").html(`
         <h2> Você acertou ${pontuacao} de ${perguntaAtual} perguntas.</h2>
         <button class='button' onclick="location.reload()">Reiniciar Quiz</button>
     `);
 
     let porcentagemAcertos = (pontuacao / perguntaAtual) * 100;
-    let label = "Parabens! Você sabe muito sobre o consumo de água"
-    if (porcentagemAcertos < 50) {
-        let label = "Estude mais!";
-    }
-
+    let label = "Parabens!"
+    if (porcentagemAcertos <= 50) {
+        label = "Estude mais!";
+        }
+    sound_piano();
+    document.getElementById("gauge").innerHTML = '';
     var gauge = new JustGage({
         id: "gauge",
         value: porcentagemAcertos,
@@ -138,4 +169,4 @@ function mute_all(){
 function setVolume(value) {
     var audio = document.getElementById("bgsong");
     audio.volume = value / 100;
-  };
+  }

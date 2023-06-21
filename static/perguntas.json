@@ -46,22 +46,22 @@
 
     "Difícil": [
         {
-            "Pergunta": "What is virtual water?",
+            "Pergunta": "O que é água virtual?",
             "Opcoes": [
-                "Water used in virtual reality simulations",
-                "Water used for digital data storage",
-                "Water required to produce goods and services",
-                "Water used in online gaming"
+                "Água usada em simulações de realidade virtual",
+                "Água usada para armazenamento de dados digitais",
+                "Água necessária para produzir bens e serviços",
+                "Água usada em jogos online"
             ],
             "Correta": 2
         },
         {
-            "Pergunta": "What is the concept of water footprint?",
+            "Pergunta": "O que é pegada hídrica?",
             "Opcoes": [
-                "The mark left by water on surfaces",
-                "The amount of water required to grow a specific crop",
-                "The sound of water droplets",
-                "The rate at which water evaporates"
+                "A marca deixada pela água em superfícies",
+                "A quantidade de água necessária para cultivar uma safra específica",
+                "O som das gotas de água",
+                "A taxa na qual a água evapora"
             ],
             "Correta": 1
         }
