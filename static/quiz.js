@@ -65,9 +65,9 @@ function selecionarResposta(indiceSelecionado) {
         pontuacao++;
     }
 
-    mostrarResultadoParcial(); // Mostra o resultado parcial a cada pergunta respondida
-
     perguntaAtual++;
+
+    mostrarResultadoParcial(); // Mostra o resultado parcial a cada pergunta respondida
 
     if (perguntaAtual < dadosQuiz[dificuldade].length) {
         carregarQuiz();
@@ -82,11 +82,6 @@ function mostrarResultadoParcial() {
     if (porcentagemAcertos <= 50) {
         label = "Estude mais!";
     }
-
-    $("#resultado").html(`
-        <h4>Resultado Parcial:</h4>
-        <div id="gaugeParcial"></div>
-    `);
 
     const gauge = new JustGage({
         id: "gaugeParcial",
@@ -105,9 +100,29 @@ function mostrarResultadoParcial() {
         refreshAnimationType: "bounce",
         refreshAnimationTime: 1000
     });
+
+    const resultadoParcial = $("#resultado-parcial");
+
+    if (resultadoParcial.length) {
+        // O elemento já existe, atualize seu conteúdo
+        resultadoParcial.html(`
+            <h2>Resultado Parcial:</h2>
+            <div id="gauge"></div>
+        `);
+    } else {
+        // O elemento ainda não existe, adicione-o
+        $("#quiz-container").append(`
+            <div id="resultado-parcial">
+                <h2>Resultado Parcial:</h2>
+                <div id="gauge"></div>
+            </div>
+        `);
+    }
 }
 
 function mostrarResultadoFinal() {
+    sound_piano();
+
     $("#quiz-container").html(`
         <h2> Você acertou ${pontuacao} de ${perguntaAtual} perguntas.</h2>
         <button class='button' onclick="location.reload()">Reiniciar Quiz</button>
@@ -118,10 +133,15 @@ function mostrarResultadoFinal() {
     if (porcentagemAcertos <= 50) {
         label = "Estude mais!";
         }
-    sound_piano();
-    document.getElementById("gauge").innerHTML = '';
+
+    // document.getElementById("gauge").innerHTML = '';
+    $("#resultado").html(`
+        <h4>Resultado Final:</h4>
+        <div id="gaugeFinal"></div>
+    `);
+
     var gauge = new JustGage({
-        id: "gauge",
+        id: "gaugeFinal",
         value: porcentagemAcertos,
         min: 0,
         max: 100,
@@ -140,6 +160,25 @@ function mostrarResultadoFinal() {
 
 }
 
+let muted = true;
+
+let audioBackground; // Variável global para armazenar a instância da música de fundo
+
+function sound_backbround() {
+    if (!muted) {
+        if (!audioBackground) {
+            audioBackground = new Audio("/static/sons/forest-river-with-whirls.mp3");
+            audioBackground.loop = true;
+        }
+        audioBackground.play();
+    }
+}
+
+function stop_sound_background() {
+    if (audioBackground) {
+        audioBackground.pause();
+    }
+}
 
 function sound_bubble(){
     if(!muted){
@@ -159,11 +198,14 @@ function mute_element(element){
     element.muted = !element.muted;
 }
 
-var muted = false;
-
 function mute_all(){
     document.querySelectorAll("audio").forEach( element => mute_element(element));
     muted = !muted;
+    if (muted) {
+        stop_sound_background();
+    } else {
+        sound_backbround();
+    }
 }
 
 function setVolume(value) {
