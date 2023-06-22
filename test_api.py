@@ -8,7 +8,7 @@ def test_read_main_should_return_status_200():
 
 def test_verify_route_quiz_gerar():
     with app_.test_client() as client:
-        response = client.post("/quiz/", data={'Dificuldade': 'Fácil'})
+        response = client.post("/quiz/")
     
     assert response.status_code == 200
 

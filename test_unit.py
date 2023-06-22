@@ -6,62 +6,64 @@ from .views.quiz import escolher_perguntas, verifica_resposta
 def static():
     return 'static'
 
-@pytest.mark.skip(reason="test will be refactored")
-def test_gerar_dificulty_facil(static):
-    output = escolher_perguntas("Fácil", static)
-    assert output[1] == 200
-
-@pytest.mark.skip(reason="test will be refactored")
-def test_gerar_dificulty_intermediary(static):
-    output = escolher_perguntas("Médio", static)
-    assert output[1] == 200
-
-@pytest.mark.skip(reason="test will be refactored")
-def test_gerar_dificulty_hard(static):
-    output = escolher_perguntas("Difícil", static)
-    assert output[1] == 200
-
-def test_gerar_dificulty_hard(static):
-    output = escolher_perguntas("Difíci", static)
-    assert output[1] == 400
-
-def test_gerar_dificulty_hard(static):
-    output = escolher_perguntas("difícil", static)
-    assert output[1] == 400
-
-def test_gerar_invalid_dificulty(static):
-    output = escolher_perguntas("Muito Difícil", static)
-    assert output[1] == 400
-
-def test_empty_quiz_difficulty():
+def test_generate_quiz_post():
+    with app_.test_client() as client:
+        response = client.post('/quiz/')
+        assert response.status_code == 200
+        assert response.content_type == 'application/json'
+        json_data = response.get_json()
+        assert isinstance(json_data, dict)
+        assert 'Fácil' in json_data
+        
+def test_post_dificulty_facil(static):
+    """
+        Testa se o quiz de dificuldade `Fácil` existe.
+    """
     with app_.test_client() as client:
         response = client.post("/quiz/")
+        json_data = response.get_json()
     
-    assert response.status_code == 200
+    assert "Fácil" in json_data
 
-@pytest.mark.skip(reason="test will be refactored")
-def test_verify_answer_all_correct(static):
-    respostas = {
-        "1": "a",
-        "2": "c",
-        "3": "b",
-        "4": "c"
-    }
-    output = verifica_resposta('Fácil', respostas, static)
+def test_post_dificulty_intermediary(static):
+    """
+        Testa se o quiz de dificuldade `Médio` existe.
+    """
+    with app_.test_client() as client:
+        response = client.post("/quiz/")
+        json_data = response.get_json()
     
-    assert output['resultado']['acertos'] == 4
+    assert "Médio" in json_data
 
-@pytest.mark.skip(reason="test will be refactored")
-def test_verify_answer_incorrect(static):
-    respostas = {
-        '1': 'a',
-        '2': 'a',
-        '3': 'a',
-        '4': 'a'
-    }
-    output = verifica_resposta('Fácil', respostas, static)
+def test_post_dificulty_hard(static):
+    """
+        Testa se o quiz de dificuldade `Difícil` existe.
+    """
+    with app_.test_client() as client:
+        response = client.post("/quiz/")
+        json_data = response.get_json()
     
-    assert output['resultado']['acertos'] != 4
+    assert "Difícil" in json_data
+
+@pytest.mark.parametrize("dificuldade", [
+    "Difíci",
+    "difícil",
+    "Muito Difícil",
+    "Fáci",
+    "Fácill",
+    "1",
+    ""
+])
+def test_post_dificulty_border_case(static, dificuldade):
+    """
+        Testa se o quiz, de dificuldades semelhantes
+        às existentes, não existem.
+    """
+    with app_.test_client() as client:
+        response = client.post("/quiz/")
+        json_data = response.get_json()
+    
+    assert dificuldade not in json_data
 
 def test_graph_mimetype_image():
     with app_.test_client() as client:
