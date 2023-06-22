@@ -1,6 +1,16 @@
 import pytest
 from .app import app as app_
 
+def test_get_content_type():
+    """
+        Testa se o `content_type` da resposta do `GET` da rota quiz
+        é um template HTML renderizado corretamente.
+    """
+    with app_.test_client() as client:
+        response = client.get('/quiz/')
+
+    assert response.content_type == 'text/html; charset=utf-8'
+
 def test_post_content_type():
     """
         Testa se o `content_type` da resposta do `POST` da rota quiz
@@ -11,7 +21,7 @@ def test_post_content_type():
 
     assert response.content_type == 'application/json'
 
-def test_post_dificulty_facil():
+def test_post_dificulty_easy():
     """
         Testa se o quiz de dificuldade `Fácil` existe.
     """

@@ -1,3 +1,4 @@
+import pytest
 from .app import app as app_
 
 def test_read_main_should_return_status_200():
@@ -10,9 +11,42 @@ def test_read_main_should_return_status_200():
     
     assert response.status_code == 200
 
-def test_verify_route_quiz_gerar():
+def test_verify_route_chat_gpt_get():
     """
-        Testa se a resposta da rota, "/quiz/"
+        Testa se a resposta "GET" da rota, "/chatgpt/"
+        está sendo retornada corretamente com código 200.
+    """
+    with app_.test_client() as client:
+        response = client.get('/chatgpt/')
+    
+    assert response.status_code == 200
+
+@pytest.mark.skip("Precisa configurar as variáveis de ambiente primeiro")
+def test_verify_route_chat_gpt_post():
+    """
+        Testa se a resposta "POST" da rota, "/chatgpt/responder"
+        está sendo retornada corretamente com código 200.
+    """
+    with app_.test_client() as client:
+        response = client.post(
+            '/chatgpt/responder', json={'input': 'Qual é a importância da conservação da água?'}
+        )
+    
+    assert response.status_code == 200
+
+def test_verify_route_quiz_get():
+    """
+        Testa se a resposta "GET" da rota, "/quiz/"
+        está sendo retornada corretamente com código 200.
+    """
+    with app_.test_client() as client:
+        response = client.get("/quiz/")
+    
+    assert response.status_code == 200
+
+def test_verify_route_quiz_post():
+    """
+        Testa se a resposta "POST" da rota, "/quiz/"
         está sendo retornada corretamente com código 200.
     """
     with app_.test_client() as client:
