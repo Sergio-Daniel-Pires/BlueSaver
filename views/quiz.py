@@ -14,7 +14,6 @@ def generate_quiz():
     elif request.method == "POST":
         """
         Preencha aqui a função 'receber quiz'
-        
         Essa função deve retornar as perguntas do quiz no formato JSON.
         """
 

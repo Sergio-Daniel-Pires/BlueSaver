@@ -62,39 +62,37 @@ function carregarQuiz() {
 }
 
 function selecionarResposta(indiceSelecionado) {
+    // Bloater: Decomposição de if's e Extract Method
     const perguntaAtualQuiz = dadosQuiz[dificuldade][indicePerguntaAtual];
     indicePerguntaAtual++;
 
     // Desabilitar as opções de resposta, exceto a selecionada
-    $(".opcao").each(function (indice) {
-        if (indice !== indiceSelecionado) {
-            $(this).addClass("opcao-desativada");
-        }
-    });
+    handleOptions(indiceSelecionado);
 
-    if (indiceSelecionado === perguntaAtualQuiz.Correta) {
-        pontuacao++;
-        mostrarResultadoParcial(true);
-    } else{
-        mostrarResultadoParcial(false);
-    }
-
-    const opcoes = $("#opcoes").find("li");
-    opcoes.removeClass("opcao-selecionada"); // Remove a classe de todas as opções
-
-    // Adiciona a classe de "opcao-selecionada" apenas na opção selecionada
-    opcoes.eq(indiceSelecionado).addClass("opcao-selecionada");
+    // Dispensable: if decomposto
+    var correctIdx = indiceSelecionado === perguntaAtualQuiz.Correta;
+    pontuacao += correctIdx;
+    mostrarResultadoParcial(correctIdx);
 
     if (indicePerguntaAtual < dadosQuiz[dificuldade].length) {
         setTimeout(() => {
             carregarQuiz();
-
-            // Habilitar todas as opções de resposta novamente
-            $(".opcao").removeClass("opcao-desativada");
         }, 1000);
     } else {
         mostrarResultadoFinal();
     }
+}
+
+function handleOptions(indiceSelecionado){
+    $(".opcao").each(function (indice) {
+        if (indice !== indiceSelecionado) {
+            var newClass = "opcao-desativada"
+        }
+        else {
+            var newClass = "opcao-selecionada"
+        }
+        $(this).addClass(newClass);
+    });
 }
 
 function mostrarResultadoParcial(usuarioAcertou) {
@@ -121,22 +119,28 @@ function mostrarResultadoParcial(usuarioAcertou) {
 }
 
 function getWaterDropsHTML(usuarioAcertou) {
+    // Bloater, usando extract method
     const totalDrops = dadosQuiz[dificuldade].length; // Número total de gotas d'água
     let dropsHTML = "";
     
     if (indicePerguntaAtual === 1) // Caso seja a primeira pergunta, gera todas as gotas para checagem do progresso do quiz
-        for (let i = 0; i < totalDrops; i++) {
-            let dropColor = i < indicePerguntaAtual && usuarioAcertou ? "blue" : "black";
-            const dropId = "drop" + i;
-            dropsHTML += `<i class="fas fa-tint" id=${dropId} style="color: ${dropColor};"></i>`;
-        }
+        dropsHTML = createWaterDrops(totalDrops, usuarioAcertou)
     else { 
         if (usuarioAcertou){ // Apenas alterar a gota correspondente à questão respondida
             let dropColor = "blue";
             $("#" + "drop" + (indicePerguntaAtual - 1)).css("color", dropColor);
-            }
         }
+    }
+    return dropsHTML;
+}
 
+function createWaterDrops(totalDrops, usuarioAcertou){
+    let dropsHTML = "";
+    for (let i = 0; i < totalDrops; i++) {
+        let dropColor = i < indicePerguntaAtual && usuarioAcertou ? "blue" : "black";
+        const dropId = "drop" + i;
+        dropsHTML += `<i class="fas fa-tint" id=${dropId} style="color: ${dropColor};"></i>`;
+    }
     return dropsHTML;
 }
 

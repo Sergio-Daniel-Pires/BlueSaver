@@ -18,9 +18,9 @@ function sendMessage() {
         },
         data: JSON.stringify({ input: userInput }),
         success: function(responseData) {
-        const generatedResponse = responseData["Resposta"];
-        // Mostrar resposta gerada
-        $('#chat-log').append(`<p><strong>ChatGPT:</strong> ${generatedResponse}</p>`);
+            const generatedResponse = responseData["Resposta"];
+            // Mostrar resposta gerada
+            $('#chat-log').append(`<p><strong>ChatGPT:</strong> ${generatedResponse}</p>`);
         }
     });
     }
