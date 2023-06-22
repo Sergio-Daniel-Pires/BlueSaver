@@ -97,7 +97,7 @@ body {
 }
 
 .tela_cheia {
-    display: none;
+    display: block;
     position: fixed;
     right: 10px; /* Distância do lado esquerdo */
     top: 10px; /* Distância do topo */
