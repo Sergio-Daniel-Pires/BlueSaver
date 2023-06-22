@@ -3,7 +3,7 @@
 {% block content %}
     <script type="text/javascript" src="{{ url_for('static', filename='calculator.js') }}"></script>
     <script type="text/javascript" src="{{ url_for('static', filename='fullscreen.js') }}"></script>
-    <h1>Calculadora de Consumo de Água</h1>
+    <h1 style="padding-top: 20px;">Calculadora de Consumo de Água</h1>
     <hr>
     <form>
         <label for="qtd_pessoas">Quantidade de pessoas na casa:</label></br>
@@ -21,7 +21,7 @@
         </select>
         </br>
 
-        <label for="gasto_mensal">Consumo Mesal (M³):</label></br>
+        <label for="gasto_mensal">Consumo Mensal (M³):</label></br>
         <input class= "input_form" type="number" id="gasto_mensal" name="gasto_mensal" placeholder="Exemplo: 18" required required>
         </br>
 

@@ -58,7 +58,7 @@ function carregarQuiz() {
     });
 
     // Atualizar o indicador de pergunta respondida
-    $("#resultado-parcial h3").html(`Pergunta ${indicePerguntaAtual}/${dadosQuiz[dificuldade].length}`);
+    $("#resultado-parcial h3").html(`${pontuacao}/${indicePerguntaAtual}`);
 }
 
 function selecionarResposta(indiceSelecionado) {

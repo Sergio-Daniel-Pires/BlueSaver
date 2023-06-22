@@ -48,15 +48,13 @@ window.onload = function (){
             }
         });
     });
-    function verifyRange(usedWater){
-        if (usedWater < 25){
-            return "Sua faixa de água esta abaixo do ideal, parabens!";
-        }
-        else if (usedWater < 41){
-            return "Sua faixa está na média, veja dicas de como reduzir!";
-        }
-        else{
-            return "Sua faixa está alta, veja dicas de como reduzir!";
+    function verifyRange(usedWater) {
+        if (usedWater < 25) {
+            return "Sua faixa de água está abaixo do ideal, parabéns!";
+        } else if (usedWater < 41) {
+            return "Sua faixa está na média, veja <a href='/dicas'>dicas</a> de como reduzir!";
+        } else {
+            return "Sua faixa está alta, veja <a href='/dicas'>dicas</a> de como reduzir!";
         }
     }
 }
