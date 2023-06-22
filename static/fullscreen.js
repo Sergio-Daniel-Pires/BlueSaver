@@ -4,19 +4,19 @@ function toggleFullscreen(){
     // Verificar se o navegador suporta a API Fullscreen
         
     // Adicionar um evento de clique ao botão
-    btnFullScreen.addEventListener('click', function() {
-        if(document.fullscreenElement){
-            if(document.exitFullscreen){
-                document.exitFullscreen();
-                btnFullScreen.textContent = 'Tela Cheia';
-            }
-        }
-        else{
-            if (document.documentElement.requestFullscreen) {
-                document.documentElement.requestFullscreen();
-                btnFullScreen.textContent = 'Sair da Tela Cheia';
-            }
-        }
     
-    });
+    if(document.fullscreenElement){
+        if(document.exitFullscreen){
+            document.exitFullscreen();
+            btnFullScreen.textContent = 'Tela Cheia';
+        }
+    }
+    else{
+        if (document.documentElement.requestFullscreen) {
+            document.documentElement.requestFullscreen();
+            btnFullScreen.textContent = 'Sair da Tela Cheia';
+        }
+    }
+    
+    
 }

@@ -6,24 +6,40 @@
             "Correta": 0
         },
         {
-            "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
-            "Opcoes": ["3%", "2,5%", "1%"],
-            "Correta": 2
+            "Pergunta": "Quanto tempo você deve escovar os dentes com a torneira aberta?",
+            "Opcoes": ["10 segundos", "30 segundos", "2 minutos", "Não é necessário deixar a torneira aberta"],
+            "Correta": 3
         },
         {
-            "Pergunta": "O consumo de água potável está estável, aumentando ou diminuindo com o tempo?",
-            "Opcoes": ["Diminuindo", "Estável", "Aumentando"],
-            "Correta": 2
+            "Pergunta": "Como podemos ajudar a economizar água ao lavar a louça?",
+            "Opcoes": ["Deixar a torneira aberta o tempo todo", "Encher a pia com água e sabão", "Lavar uma peça de cada vez", "Usar água quente em todas as etapas"],
+            "Correta": 1
+        },
+        {
+            "Pergunta": "Qual é a maneira correta de usar a máquina de lavar roupa para economizar água?",
+            "Opcoes": [
+                "Lavar apenas uma peça de roupa de cada vez",
+                "Encher a máquina de lavar até a capacidade máxima",
+                "Lavar as roupas duas vezes seguidas",
+                "Deixar a máquina de lavar ligada o dia todo"
+            ],
+            "Correta": 1
+        },
+        {
+            "Pergunta": "De quem é o dever de preservar a água?",
+            "Opcoes": [
+                "Do Prefeito",
+                "Das famílias",
+                "Das empresas",
+                "De todos"
+            ],
+            "Correta": 3
         }
-    ],
+
+        ],
 
     "Médio": [
         {
-            "Pergunta": "Qual atividade utiliza mais água no dia a dia dentro de casa?",
-            "Opcoes": ["Descarga da privada", "Banho", "Lavar roupa", "lavar a louça"],
-            "Correta": 0
-        },
-        {
             "Pergunta": "Quantos porcento da água do mundo é potável e não congelada?",
             "Opcoes": ["3%", "2,5%", "1%"],
             "Correta": 2
@@ -31,6 +47,21 @@
         {
             "Pergunta": "O consumo de água potável está estável, aumentando ou diminuindo com o tempo?",
             "Opcoes": ["Diminuindo", "Estável", "Aumentando"],
+            "Correta": 2
+        },
+        {
+            "Pergunta": "Qual é a porcentagem da população mundial que não tem acesso a água potável?",
+            "Opcoes": ["10%", "25%", "50%", "75%"],
+            "Correta": 2
+        },
+        {
+            "Pergunta": "Em algumas regiões áridas, as pessoas precisam percorrer longas distâncias para obter água. Quais são os recipientes tradicionais usados para transportar água nesses lugares?",
+            "Opcoes": ["Latas de alumínio", "Garrafas plásticas", "Baldes de metal", "Jarros de barro"],
+            "Correta": 3
+        },
+        {
+            "Pergunta": "Em muitas partes do mundo, as comunidades usam técnicas de coleta de água da chuva para garantir o abastecimento. Qual é o nome dado a esses sistemas de coleta de água?",
+            "Opcoes": ["Captadores de chuva", "Reservatórios subterrâneos", "Cisternas", "Torres de água"],
             "Correta": 2
         }
     ],
@@ -55,6 +86,26 @@
                 "A taxa na qual a água evapora"
             ],
             "Correta": 1
+        },
+        {
+            "Pergunta": "Qual é o país que possui a maior proporção de água doce em relação ao seu território?",
+            "Opcoes": ["Brasil", "Canadá", "Rússia", "Austrália"],
+            "Correta": 1
+            },
+            {
+            "Pergunta": "Qual é o principal fator responsável pela escassez de água em muitas regiões do mundo?",
+            "Opcoes": ["Poluição da água", "Mudanças climáticas", "Consumo excessivo", "Falta de infraestrutura"],
+            "Correta": 2
+            },
+            {
+            "Pergunta": "O que é desertificação?",
+            "Opcoes": [
+                "Um processo de transformação de áreas férteis em desertos",
+                "Uma técnica de cultivo em áreas áridas",
+                "Um tipo de reserva natural",
+                "Uma forma de reciclagem de água"
+            ],
+            "Correta": 0
         }
     ]
 }

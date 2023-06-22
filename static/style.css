@@ -1,6 +1,8 @@
 .footer {
     background-color: #f8f9fa;
     position: relative;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
     width: 100%;
 }
 
@@ -14,6 +16,10 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+body {
+  overflow-y: scroll;
 }
 
 .footer-social-icons {
@@ -91,7 +97,7 @@
 }
 
 .tela_cheia {
-    display: none;
+    display: block;
     position: fixed;
     right: 10px; /* Distância do lado esquerdo */
     top: 10px; /* Distância do topo */
@@ -145,4 +151,8 @@ a.item {
     text-decoration: none;
     color: black;
     text-align: center;
+}
+
+.chat-placeholder {
+    height: 350px;
 }
