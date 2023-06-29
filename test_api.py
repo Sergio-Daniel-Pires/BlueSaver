@@ -44,6 +44,16 @@ def test_verify_route_quiz_get():
     
     assert response.status_code == 200
 
+def test_verify_route_calculadora_get():
+    """
+        Testa se a resposta "GET" da rota, "/calculadora/"
+        está sendo retornada corretamente com código 200.
+    """
+    with app_.test_client() as client:
+        response = client.get("/calculadora/")
+    
+    assert response.status_code == 200
+
 def test_verify_route_quiz_post():
     """
         Testa se a resposta "POST" da rota, "/quiz/"
