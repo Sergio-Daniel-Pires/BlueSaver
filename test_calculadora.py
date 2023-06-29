@@ -1,7 +1,7 @@
 import pytest
 from .app import app as app_
 
-def test_calculator_valid_status():
+def test_calculator_valid_key():
     """
     Testa se a resposta do `POST` da rota "/calculadora/calcular"
     com dados válidos contém as chaves esperadas no objeto JSON retornado.
