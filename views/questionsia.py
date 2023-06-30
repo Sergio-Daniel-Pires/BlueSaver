@@ -7,6 +7,25 @@ chatgpt_bp = Blueprint('chatGPT', __name__)
 def calculator_page():
     return make_response(render_template('chatgpt.html'), 200)
 
+class ChatGPT:
+    def __init__(self, prompt):
+        self.prompt = prompt
+
+    
+    def get_answer(self):
+            model_engine = "text-davinci-003"
+            completion = openai.Completion.create(
+                engine=model_engine,
+                prompt=self.prompt,
+                max_tokens=1024,
+                n=1,
+                stop=None,
+                temperature=0
+            )
+
+            response = completion.choices[0].text
+            return response
+    
 
 @chatgpt_bp.route('/responder', methods=['POST'])
 def answer_chatgpt():
@@ -14,7 +33,6 @@ def answer_chatgpt():
     Essa função deve receber a perguntas do quiz e devolver o resultado do chatGPT
     """
 
-    model_engine = "text-davinci-003"
     prompt = """
         Você é um especialista global no uso de água, seja nas suas diferentes áreas, tanto na indústria, agricultura quanto no uso domético.
         Não responda perguntas que não estão relacionadas com água e nesses casos diga que não aceita a pergunta porque ela deve estar relacionada a água. Logo abaixo vem minha pergunta:
@@ -27,15 +45,7 @@ def answer_chatgpt():
 
     prompt += user_input
 
-    completion = openai.Completion.create(
-        engine=model_engine,
-        prompt=prompt,
-        max_tokens=1024,
-        n=1,
-        stop=None,
-        temperature=0
-    )
-
-    response = completion.choices[0].text
+    chat = ChatGPT(prompt)
+    response = chat.get_answer()
 
     return jsonify({"Resposta": response})
