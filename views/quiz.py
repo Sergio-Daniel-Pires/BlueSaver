@@ -2,8 +2,6 @@ from flask import render_template, request, jsonify, current_app, make_response,
 import os
 import json
 
-from utils.quiz_funcoes import escolher_perguntas, verifica_resposta
-
 quiz_bp = Blueprint("quiz", __name__)
 
 @quiz_bp.route('/', methods=['GET', 'POST'])
